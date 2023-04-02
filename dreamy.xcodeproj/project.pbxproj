@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20B13D039DB2FFD360A71A19 /* Pods_dreamyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9481FA9833853C9A436FF0BD /* Pods_dreamyTests.framework */; };
+		945D907A29D89383007F0FD2 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945D907929D89383007F0FD2 /* ButtonCollectionViewCell.swift */; };
+		947C271529CF1DE600FDC3F8 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BF454A29CF1D54002D855E /* libc++.tbd */; };
+		947C271729CF1E0A00FDC3F8 /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 947C271629CF1E0A00FDC3F8 /* libc++abi.tbd */; };
+		947C271A29CF2F5400FDC3F8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C271929CF2F5400FDC3F8 /* TableViewCell.swift */; };
+		947C271D29CF2FE400FDC3F8 /* BottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C271C29CF2FE400FDC3F8 /* BottomSheetVC.swift */; };
+		947C272029CF38B500FDC3F8 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C271F29CF38B500FDC3F8 /* Search.swift */; };
+		947C272229CF395F00FDC3F8 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C272129CF395F00FDC3F8 /* MapPin.swift */; };
+		947C272429CF48F300FDC3F8 /* 1차_가게리스트.csv in Resources */ = {isa = PBXBuildFile; fileRef = 947C272329CF48F300FDC3F8 /* 1차_가게리스트.csv */; };
+		947C272729CF589C00FDC3F8 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C272629CF589C00FDC3F8 /* Struct.swift */; };
+		947C272929CF842F00FDC3F8 /* LoadDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C272829CF842F00FDC3F8 /* LoadDB.swift */; };
 		94802D8A29CDD0120015AC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94802D8929CDD0120015AC3D /* AppDelegate.swift */; };
 		94802D8C29CDD0120015AC3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94802D8B29CDD0120015AC3D /* SceneDelegate.swift */; };
 		94802D8E29CDD0120015AC3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94802D8D29CDD0120015AC3D /* ViewController.swift */; };
@@ -17,6 +28,48 @@
 		94802DA429CDD0130015AC3D /* dreamyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94802DA329CDD0130015AC3D /* dreamyTests.swift */; };
 		94802DAE29CDD0130015AC3D /* dreamyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94802DAD29CDD0130015AC3D /* dreamyUITests.swift */; };
 		94802DB029CDD0130015AC3D /* dreamyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94802DAF29CDD0130015AC3D /* dreamyUITestsLaunchTests.swift */; };
+		9480301829CDD1B10015AC3D /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FF329CDD1B10015AC3D /* map_pinup_custom@3x.png */; };
+		9480301929CDD1B10015AC3D /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FF429CDD1B10015AC3D /* map_pin_custom.png */; };
+		9480301A29CDD1B10015AC3D /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FF529CDD1B10015AC3D /* shadow_balloon.png */; };
+		9480301B29CDD1B10015AC3D /* map_pinup.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FF629CDD1B10015AC3D /* map_pinup.png */; };
+		9480301C29CDD1B10015AC3D /* detail_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FF729CDD1B10015AC3D /* detail_button.png */; };
+		9480301D29CDD1B10015AC3D /* map_pin_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FF829CDD1B10015AC3D /* map_pin_custom@3x.png */; };
+		9480301E29CDD1B10015AC3D /* map_pinup@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FF929CDD1B10015AC3D /* map_pinup@3x.png */; };
+		9480301F29CDD1B10015AC3D /* map_pin_shadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FFA29CDD1B10015AC3D /* map_pin_shadow@3x.png */; };
+		9480302029CDD1B10015AC3D /* copyright.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FFB29CDD1B10015AC3D /* copyright.png */; };
+		9480302129CDD1B10015AC3D /* th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FFC29CDD1B10015AC3D /* th_line.png */; };
+		9480302229CDD1B10015AC3D /* map_pin_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FFD29CDD1B10015AC3D /* map_pin_red@3x.png */; };
+		9480302329CDD1B10015AC3D /* daum_copyright.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FFE29CDD1B10015AC3D /* daum_copyright.png */; };
+		9480302429CDD1B10015AC3D /* map_pin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94802FFF29CDD1B10015AC3D /* map_pin@3x.png */; };
+		9480302529CDD1B10015AC3D /* map_present_tracking.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480300029CDD1B10015AC3D /* map_present_tracking.png */; };
+		9480302629CDD1B10015AC3D /* map_pin_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480300129CDD1B10015AC3D /* map_pin_red.png */; };
+		9480302729CDD1B10015AC3D /* info_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480300B29CDD1B10015AC3D /* info_box.png */; };
+		9480302829CDD1B10015AC3D /* point_sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480300C29CDD1B10015AC3D /* point_sprite.png */; };
+		9480302929CDD1B10015AC3D /* map_pinup_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480300D29CDD1B10015AC3D /* map_pinup_custom.png */; };
+		9480302A29CDD1B10015AC3D /* info_box_tail.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480300E29CDD1B10015AC3D /* info_box_tail.png */; };
+		9480302B29CDD1B10015AC3D /* noimage256.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480300F29CDD1B10015AC3D /* noimage256.png */; };
+		9480302C29CDD1B10015AC3D /* map_present_direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480301029CDD1B10015AC3D /* map_present_direction.png */; };
+		9480302D29CDD1B10015AC3D /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480301129CDD1B10015AC3D /* map_pin.png */; };
+		9480302E29CDD1B10015AC3D /* map_present.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480301229CDD1B10015AC3D /* map_present.png */; };
+		9480302F29CDD1B10015AC3D /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480301329CDD1B10015AC3D /* noimage.png */; };
+		9480303029CDD1B10015AC3D /* map_present_background_update.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480301429CDD1B10015AC3D /* map_present_background_update.png */; };
+		9480303129CDD1B10015AC3D /* daum_th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480301529CDD1B10015AC3D /* daum_th_line.png */; };
+		9480303229CDD1B10015AC3D /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480301629CDD1B10015AC3D /* map_pin_shadow.png */; };
+		9480303329CDD1B10015AC3D /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9480301729CDD1B10015AC3D /* DaumMap.framework */; };
+		9480303629CDD23B0015AC3D /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9480303529CDD23B0015AC3D /* Metal.framework */; };
+		9480303829CDD2460015AC3D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9480303729CDD2450015AC3D /* SystemConfiguration.framework */; };
+		9480303A29CDD24D0015AC3D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9480303929CDD24C0015AC3D /* CoreLocation.framework */; };
+		9480303C29CDD2540015AC3D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9480303B29CDD2530015AC3D /* QuartzCore.framework */; };
+		9480304229CDD2970015AC3D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9480304129CDD2850015AC3D /* libsqlite3.tbd */; };
+		9480304429CDD6C40015AC3D /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9480301729CDD1B10015AC3D /* DaumMap.framework */; };
+		9480304829CE073B0015AC3D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9480304729CE073B0015AC3D /* MapViewController.swift */; };
+		94BF454229CEF165002D855E /* TouchBlockIntrinsicPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BF454129CEF165002D855E /* TouchBlockIntrinsicPanelLayout.swift */; };
+		94BF454429CEF41B002D855E /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BF454329CEF41B002D855E /* BottomSheetViewController.swift */; };
+		94BF454629CEF4AB002D855E /* SelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BF454529CEF4AB002D855E /* SelfSizingTableView.swift */; };
+		94BF454829CF1BE5002D855E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BF454729CF1BE5002D855E /* OpenGLES.framework */; };
+		94BF454D29CF1DAF002D855E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BF454C29CF1D68002D855E /* libxml2.tbd */; };
+		EB89301681AF71EBABA0D02A /* Pods_dreamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8D638761698E0678212EC8 /* Pods_dreamy.framework */; };
+		EEFEF409746F144DAC1981A9 /* Pods_dreamy_dreamyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E9606E2AFC4D7900B6856A /* Pods_dreamy_dreamyUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +90,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BB666D2082F4703B885DFAC /* Pods-dreamy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamy.debug.xcconfig"; path = "Target Support Files/Pods-dreamy/Pods-dreamy.debug.xcconfig"; sourceTree = "<group>"; };
+		0C4C9CAA0F08A80EF69A5AF1 /* Pods-dreamy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamy.release.xcconfig"; path = "Target Support Files/Pods-dreamy/Pods-dreamy.release.xcconfig"; sourceTree = "<group>"; };
+		1070910227BB246771FC5C80 /* Pods-dreamyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamyTests.release.xcconfig"; path = "Target Support Files/Pods-dreamyTests/Pods-dreamyTests.release.xcconfig"; sourceTree = "<group>"; };
+		2F8D638761698E0678212EC8 /* Pods_dreamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dreamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56E9606E2AFC4D7900B6856A /* Pods_dreamy_dreamyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dreamy_dreamyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A062064C2845A79C5647E80 /* Pods-dreamy-dreamyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamy-dreamyUITests.release.xcconfig"; path = "Target Support Files/Pods-dreamy-dreamyUITests/Pods-dreamy-dreamyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5D5A8718F1E6943B207382B3 /* Pods-dreamyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamyTests.debug.xcconfig"; path = "Target Support Files/Pods-dreamyTests/Pods-dreamyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		945D907929D89383007F0FD2 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		947C271629CF1E0A00FDC3F8 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		947C271929CF2F5400FDC3F8 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		947C271C29CF2FE400FDC3F8 /* BottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetVC.swift; sourceTree = "<group>"; };
+		947C271F29CF38B500FDC3F8 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		947C272129CF395F00FDC3F8 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
+		947C272329CF48F300FDC3F8 /* 1차_가게리스트.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "1차_가게리스트.csv"; path = "../../../../Downloads/1차_가게리스트.csv"; sourceTree = "<group>"; };
+		947C272629CF589C00FDC3F8 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		947C272829CF842F00FDC3F8 /* LoadDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDB.swift; sourceTree = "<group>"; };
 		94802D8629CDD0120015AC3D /* dreamy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dreamy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94802D8929CDD0120015AC3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94802D8B29CDD0120015AC3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +120,57 @@
 		94802DA929CDD0130015AC3D /* dreamyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dreamyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94802DAD29CDD0130015AC3D /* dreamyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dreamyUITests.swift; sourceTree = "<group>"; };
 		94802DAF29CDD0130015AC3D /* dreamyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dreamyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		94802FF329CDD1B10015AC3D /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
+		94802FF429CDD1B10015AC3D /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
+		94802FF529CDD1B10015AC3D /* shadow_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_balloon.png; sourceTree = "<group>"; };
+		94802FF629CDD1B10015AC3D /* map_pinup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pinup.png; sourceTree = "<group>"; };
+		94802FF729CDD1B10015AC3D /* detail_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail_button.png; sourceTree = "<group>"; };
+		94802FF829CDD1B10015AC3D /* map_pin_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin_custom@3x.png"; sourceTree = "<group>"; };
+		94802FF929CDD1B10015AC3D /* map_pinup@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup@3x.png"; sourceTree = "<group>"; };
+		94802FFA29CDD1B10015AC3D /* map_pin_shadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin_shadow@3x.png"; sourceTree = "<group>"; };
+		94802FFB29CDD1B10015AC3D /* copyright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copyright.png; sourceTree = "<group>"; };
+		94802FFC29CDD1B10015AC3D /* th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th_line.png; sourceTree = "<group>"; };
+		94802FFD29CDD1B10015AC3D /* map_pin_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin_red@3x.png"; sourceTree = "<group>"; };
+		94802FFE29CDD1B10015AC3D /* daum_copyright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_copyright.png; sourceTree = "<group>"; };
+		94802FFF29CDD1B10015AC3D /* map_pin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin@3x.png"; sourceTree = "<group>"; };
+		9480300029CDD1B10015AC3D /* map_present_tracking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present_tracking.png; sourceTree = "<group>"; };
+		9480300129CDD1B10015AC3D /* map_pin_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_red.png; sourceTree = "<group>"; };
+		9480300329CDD1B10015AC3D /* MTMapPOIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPOIItem.h; sourceTree = "<group>"; };
+		9480300429CDD1B10015AC3D /* MTMapCameraUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCameraUpdate.h; sourceTree = "<group>"; };
+		9480300529CDD1B10015AC3D /* MTMapReverseGeoCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapReverseGeoCoder.h; sourceTree = "<group>"; };
+		9480300629CDD1B10015AC3D /* MTMapPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPolyline.h; sourceTree = "<group>"; };
+		9480300729CDD1B10015AC3D /* MTMapLocationMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapLocationMarkerItem.h; sourceTree = "<group>"; };
+		9480300829CDD1B10015AC3D /* MTMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapView.h; sourceTree = "<group>"; };
+		9480300929CDD1B10015AC3D /* MTMapGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapGeometry.h; sourceTree = "<group>"; };
+		9480300A29CDD1B10015AC3D /* MTMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCircle.h; sourceTree = "<group>"; };
+		9480300B29CDD1B10015AC3D /* info_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_box.png; sourceTree = "<group>"; };
+		9480300C29CDD1B10015AC3D /* point_sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point_sprite.png; sourceTree = "<group>"; };
+		9480300D29CDD1B10015AC3D /* map_pinup_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pinup_custom.png; sourceTree = "<group>"; };
+		9480300E29CDD1B10015AC3D /* info_box_tail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_box_tail.png; sourceTree = "<group>"; };
+		9480300F29CDD1B10015AC3D /* noimage256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage256.png; sourceTree = "<group>"; };
+		9480301029CDD1B10015AC3D /* map_present_direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present_direction.png; sourceTree = "<group>"; };
+		9480301129CDD1B10015AC3D /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin.png; sourceTree = "<group>"; };
+		9480301229CDD1B10015AC3D /* map_present.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present.png; sourceTree = "<group>"; };
+		9480301329CDD1B10015AC3D /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
+		9480301429CDD1B10015AC3D /* map_present_background_update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present_background_update.png; sourceTree = "<group>"; };
+		9480301529CDD1B10015AC3D /* daum_th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_th_line.png; sourceTree = "<group>"; };
+		9480301629CDD1B10015AC3D /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
+		9480301729CDD1B10015AC3D /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		9480303529CDD23B0015AC3D /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		9480303729CDD2450015AC3D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9480303929CDD24C0015AC3D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9480303B29CDD2530015AC3D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9480304129CDD2850015AC3D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		9480304329CDD3490015AC3D /* dreamy-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dreamy-bridging-header.h"; sourceTree = "<group>"; };
+		9480304729CE073B0015AC3D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9481FA9833853C9A436FF0BD /* Pods_dreamyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dreamyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94BF454129CEF165002D855E /* TouchBlockIntrinsicPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBlockIntrinsicPanelLayout.swift; sourceTree = "<group>"; };
+		94BF454329CEF41B002D855E /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		94BF454529CEF4AB002D855E /* SelfSizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingTableView.swift; sourceTree = "<group>"; };
+		94BF454729CF1BE5002D855E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		94BF454A29CF1D54002D855E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		94BF454C29CF1D68002D855E /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		EF639CE75FA8C0A26E63A510 /* Pods-dreamy-dreamyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamy-dreamyUITests.debug.xcconfig"; path = "Target Support Files/Pods-dreamy-dreamyUITests/Pods-dreamy-dreamyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +178,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947C271729CF1E0A00FDC3F8 /* libc++abi.tbd in Frameworks */,
+				947C271529CF1DE600FDC3F8 /* libc++.tbd in Frameworks */,
+				94BF454D29CF1DAF002D855E /* libxml2.tbd in Frameworks */,
+				94BF454829CF1BE5002D855E /* OpenGLES.framework in Frameworks */,
+				9480303329CDD1B10015AC3D /* DaumMap.framework in Frameworks */,
+				9480303A29CDD24D0015AC3D /* CoreLocation.framework in Frameworks */,
+				9480304229CDD2970015AC3D /* libsqlite3.tbd in Frameworks */,
+				9480303C29CDD2540015AC3D /* QuartzCore.framework in Frameworks */,
+				9480303629CDD23B0015AC3D /* Metal.framework in Frameworks */,
+				9480304429CDD6C40015AC3D /* DaumMap.framework in Frameworks */,
+				9480303829CDD2460015AC3D /* SystemConfiguration.framework in Frameworks */,
+				EB89301681AF71EBABA0D02A /* Pods_dreamy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B13D039DB2FFD360A71A19 /* Pods_dreamyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +205,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEFEF409746F144DAC1981A9 /* Pods_dreamy_dreamyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		947C271829CF2CD400FDC3F8 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				947C271929CF2F5400FDC3F8 /* TableViewCell.swift */,
+				947C271C29CF2FE400FDC3F8 /* BottomSheetVC.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		947C271E29CF389700FDC3F8 /* KakaoMap */ = {
+			isa = PBXGroup;
+			children = (
+				947C271F29CF38B500FDC3F8 /* Search.swift */,
+				947C272129CF395F00FDC3F8 /* MapPin.swift */,
+				945D907929D89383007F0FD2 /* ButtonCollectionViewCell.swift */,
+			);
+			path = KakaoMap;
+			sourceTree = "<group>";
+		};
+		947C272529CF587200FDC3F8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				947C272629CF589C00FDC3F8 /* Struct.swift */,
+				947C272829CF842F00FDC3F8 /* LoadDB.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		947C272A29D203DA00FDC3F8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				947C271E29CF389700FDC3F8 /* KakaoMap */,
+				947C271829CF2CD400FDC3F8 /* TableView */,
+				94BF454029CEF133002D855E /* BottomSheet */,
+				9480304729CE073B0015AC3D /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		94802D7D29CDD0120015AC3D = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +258,8 @@
 				94802DA229CDD0130015AC3D /* dreamyTests */,
 				94802DAC29CDD0130015AC3D /* dreamyUITests */,
 				94802D8729CDD0120015AC3D /* Products */,
+				9480303429CDD23B0015AC3D /* Frameworks */,
+				DEE4D7C81D3316DCD91B15BF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +276,8 @@
 		94802D8829CDD0120015AC3D /* dreamy */ = {
 			isa = PBXGroup;
 			children = (
+				947C272A29D203DA00FDC3F8 /* Map */,
+				947C272529CF587200FDC3F8 /* Common */,
 				94802D8929CDD0120015AC3D /* AppDelegate.swift */,
 				94802D8B29CDD0120015AC3D /* SceneDelegate.swift */,
 				94802D8D29CDD0120015AC3D /* ViewController.swift */,
@@ -109,6 +286,8 @@
 				94802D9729CDD0130015AC3D /* LaunchScreen.storyboard */,
 				94802D9A29CDD0130015AC3D /* Info.plist */,
 				94802D9229CDD0120015AC3D /* dreamy.xcdatamodeld */,
+				9480304329CDD3490015AC3D /* dreamy-bridging-header.h */,
+				947C272329CF48F300FDC3F8 /* 1차_가게리스트.csv */,
 			);
 			path = dreamy;
 			sourceTree = "<group>";
@@ -130,6 +309,108 @@
 			path = dreamyUITests;
 			sourceTree = "<group>";
 		};
+		94802FF129CDD1B10015AC3D /* DaumMap.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				94802FF229CDD1B10015AC3D /* Resources */,
+				9480301729CDD1B10015AC3D /* DaumMap.framework */,
+			);
+			path = DaumMap.embeddedframework;
+			sourceTree = "<group>";
+		};
+		94802FF229CDD1B10015AC3D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				94802FF329CDD1B10015AC3D /* map_pinup_custom@3x.png */,
+				94802FF429CDD1B10015AC3D /* map_pin_custom.png */,
+				94802FF529CDD1B10015AC3D /* shadow_balloon.png */,
+				94802FF629CDD1B10015AC3D /* map_pinup.png */,
+				94802FF729CDD1B10015AC3D /* detail_button.png */,
+				94802FF829CDD1B10015AC3D /* map_pin_custom@3x.png */,
+				94802FF929CDD1B10015AC3D /* map_pinup@3x.png */,
+				94802FFA29CDD1B10015AC3D /* map_pin_shadow@3x.png */,
+				94802FFB29CDD1B10015AC3D /* copyright.png */,
+				94802FFC29CDD1B10015AC3D /* th_line.png */,
+				94802FFD29CDD1B10015AC3D /* map_pin_red@3x.png */,
+				94802FFE29CDD1B10015AC3D /* daum_copyright.png */,
+				94802FFF29CDD1B10015AC3D /* map_pin@3x.png */,
+				9480300029CDD1B10015AC3D /* map_present_tracking.png */,
+				9480300129CDD1B10015AC3D /* map_pin_red.png */,
+				9480300229CDD1B10015AC3D /* Headers */,
+				9480300B29CDD1B10015AC3D /* info_box.png */,
+				9480300C29CDD1B10015AC3D /* point_sprite.png */,
+				9480300D29CDD1B10015AC3D /* map_pinup_custom.png */,
+				9480300E29CDD1B10015AC3D /* info_box_tail.png */,
+				9480300F29CDD1B10015AC3D /* noimage256.png */,
+				9480301029CDD1B10015AC3D /* map_present_direction.png */,
+				9480301129CDD1B10015AC3D /* map_pin.png */,
+				9480301229CDD1B10015AC3D /* map_present.png */,
+				9480301329CDD1B10015AC3D /* noimage.png */,
+				9480301429CDD1B10015AC3D /* map_present_background_update.png */,
+				9480301529CDD1B10015AC3D /* daum_th_line.png */,
+				9480301629CDD1B10015AC3D /* map_pin_shadow.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9480300229CDD1B10015AC3D /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				9480300329CDD1B10015AC3D /* MTMapPOIItem.h */,
+				9480300429CDD1B10015AC3D /* MTMapCameraUpdate.h */,
+				9480300529CDD1B10015AC3D /* MTMapReverseGeoCoder.h */,
+				9480300629CDD1B10015AC3D /* MTMapPolyline.h */,
+				9480300729CDD1B10015AC3D /* MTMapLocationMarkerItem.h */,
+				9480300829CDD1B10015AC3D /* MTMapView.h */,
+				9480300929CDD1B10015AC3D /* MTMapGeometry.h */,
+				9480300A29CDD1B10015AC3D /* MTMapCircle.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		9480303429CDD23B0015AC3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				947C271629CF1E0A00FDC3F8 /* libc++abi.tbd */,
+				94BF454C29CF1D68002D855E /* libxml2.tbd */,
+				94BF454A29CF1D54002D855E /* libc++.tbd */,
+				94BF454729CF1BE5002D855E /* OpenGLES.framework */,
+				94802FF129CDD1B10015AC3D /* DaumMap.embeddedframework */,
+				9480304129CDD2850015AC3D /* libsqlite3.tbd */,
+				9480303B29CDD2530015AC3D /* QuartzCore.framework */,
+				9480303929CDD24C0015AC3D /* CoreLocation.framework */,
+				9480303729CDD2450015AC3D /* SystemConfiguration.framework */,
+				9480303529CDD23B0015AC3D /* Metal.framework */,
+				2F8D638761698E0678212EC8 /* Pods_dreamy.framework */,
+				56E9606E2AFC4D7900B6856A /* Pods_dreamy_dreamyUITests.framework */,
+				9481FA9833853C9A436FF0BD /* Pods_dreamyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94BF454029CEF133002D855E /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				94BF454129CEF165002D855E /* TouchBlockIntrinsicPanelLayout.swift */,
+				94BF454329CEF41B002D855E /* BottomSheetViewController.swift */,
+				94BF454529CEF4AB002D855E /* SelfSizingTableView.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		DEE4D7C81D3316DCD91B15BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BB666D2082F4703B885DFAC /* Pods-dreamy.debug.xcconfig */,
+				0C4C9CAA0F08A80EF69A5AF1 /* Pods-dreamy.release.xcconfig */,
+				EF639CE75FA8C0A26E63A510 /* Pods-dreamy-dreamyUITests.debug.xcconfig */,
+				5A062064C2845A79C5647E80 /* Pods-dreamy-dreamyUITests.release.xcconfig */,
+				5D5A8718F1E6943B207382B3 /* Pods-dreamyTests.debug.xcconfig */,
+				1070910227BB246771FC5C80 /* Pods-dreamyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +418,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94802DB329CDD0130015AC3D /* Build configuration list for PBXNativeTarget "dreamy" */;
 			buildPhases = (
+				5891421F5270D84D048FCD84 /* [CP] Check Pods Manifest.lock */,
 				94802D8229CDD0120015AC3D /* Sources */,
 				94802D8329CDD0120015AC3D /* Frameworks */,
 				94802D8429CDD0120015AC3D /* Resources */,
+				45784349CFB9897F27A41A0E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +437,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94802DB629CDD0130015AC3D /* Build configuration list for PBXNativeTarget "dreamyTests" */;
 			buildPhases = (
+				DB4ED79CE3A16B48B66B3217 /* [CP] Check Pods Manifest.lock */,
 				94802D9B29CDD0130015AC3D /* Sources */,
 				94802D9C29CDD0130015AC3D /* Frameworks */,
 				94802D9D29CDD0130015AC3D /* Resources */,
@@ -172,9 +456,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94802DB929CDD0130015AC3D /* Build configuration list for PBXNativeTarget "dreamyUITests" */;
 			buildPhases = (
+				1122D16AC8C54A67C9031C60 /* [CP] Check Pods Manifest.lock */,
 				94802DA529CDD0130015AC3D /* Sources */,
 				94802DA629CDD0130015AC3D /* Frameworks */,
 				94802DA729CDD0130015AC3D /* Resources */,
+				068FADE4BEAE22A13C49064B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,9 +520,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9480302E29CDD1B10015AC3D /* map_present.png in Resources */,
+				9480302429CDD1B10015AC3D /* map_pin@3x.png in Resources */,
+				9480302229CDD1B10015AC3D /* map_pin_red@3x.png in Resources */,
+				9480302D29CDD1B10015AC3D /* map_pin.png in Resources */,
+				9480302629CDD1B10015AC3D /* map_pin_red.png in Resources */,
+				9480301829CDD1B10015AC3D /* map_pinup_custom@3x.png in Resources */,
+				9480302029CDD1B10015AC3D /* copyright.png in Resources */,
+				9480301F29CDD1B10015AC3D /* map_pin_shadow@3x.png in Resources */,
 				94802D9929CDD0130015AC3D /* LaunchScreen.storyboard in Resources */,
+				9480302329CDD1B10015AC3D /* daum_copyright.png in Resources */,
+				9480302729CDD1B10015AC3D /* info_box.png in Resources */,
+				9480301D29CDD1B10015AC3D /* map_pin_custom@3x.png in Resources */,
+				9480303229CDD1B10015AC3D /* map_pin_shadow.png in Resources */,
+				947C272429CF48F300FDC3F8 /* 1차_가게리스트.csv in Resources */,
+				9480302529CDD1B10015AC3D /* map_present_tracking.png in Resources */,
+				9480301C29CDD1B10015AC3D /* detail_button.png in Resources */,
+				9480302F29CDD1B10015AC3D /* noimage.png in Resources */,
+				9480302129CDD1B10015AC3D /* th_line.png in Resources */,
+				9480302A29CDD1B10015AC3D /* info_box_tail.png in Resources */,
+				9480301929CDD1B10015AC3D /* map_pin_custom.png in Resources */,
+				9480302929CDD1B10015AC3D /* map_pinup_custom.png in Resources */,
+				9480301E29CDD1B10015AC3D /* map_pinup@3x.png in Resources */,
+				9480302829CDD1B10015AC3D /* point_sprite.png in Resources */,
+				9480303029CDD1B10015AC3D /* map_present_background_update.png in Resources */,
+				9480302C29CDD1B10015AC3D /* map_present_direction.png in Resources */,
+				9480302B29CDD1B10015AC3D /* noimage256.png in Resources */,
+				9480301A29CDD1B10015AC3D /* shadow_balloon.png in Resources */,
 				94802D9629CDD0130015AC3D /* Assets.xcassets in Resources */,
 				94802D9129CDD0120015AC3D /* Main.storyboard in Resources */,
+				9480303129CDD1B10015AC3D /* daum_th_line.png in Resources */,
+				9480301B29CDD1B10015AC3D /* map_pinup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +570,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		068FADE4BEAE22A13C49064B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dreamy-dreamyUITests/Pods-dreamy-dreamyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dreamy-dreamyUITests/Pods-dreamy-dreamyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dreamy-dreamyUITests/Pods-dreamy-dreamyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1122D16AC8C54A67C9031C60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dreamy-dreamyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45784349CFB9897F27A41A0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dreamy/Pods-dreamy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dreamy/Pods-dreamy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dreamy/Pods-dreamy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5891421F5270D84D048FCD84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dreamy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB4ED79CE3A16B48B66B3217 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dreamyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		94802D8229CDD0120015AC3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -264,7 +681,18 @@
 				94802D8E29CDD0120015AC3D /* ViewController.swift in Sources */,
 				94802D9429CDD0120015AC3D /* dreamy.xcdatamodeld in Sources */,
 				94802D8A29CDD0120015AC3D /* AppDelegate.swift in Sources */,
+				9480304829CE073B0015AC3D /* MapViewController.swift in Sources */,
+				947C272729CF589C00FDC3F8 /* Struct.swift in Sources */,
+				947C271A29CF2F5400FDC3F8 /* TableViewCell.swift in Sources */,
+				94BF454229CEF165002D855E /* TouchBlockIntrinsicPanelLayout.swift in Sources */,
+				947C272229CF395F00FDC3F8 /* MapPin.swift in Sources */,
+				94BF454629CEF4AB002D855E /* SelfSizingTableView.swift in Sources */,
+				947C271D29CF2FE400FDC3F8 /* BottomSheetVC.swift in Sources */,
+				947C272029CF38B500FDC3F8 /* Search.swift in Sources */,
 				94802D8C29CDD0120015AC3D /* SceneDelegate.swift in Sources */,
+				94BF454429CEF41B002D855E /* BottomSheetViewController.swift in Sources */,
+				945D907A29D89383007F0FD2 /* ButtonCollectionViewCell.swift in Sources */,
+				947C272929CF842F00FDC3F8 /* LoadDB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,13 +751,14 @@
 		94802DB129CDD0130015AC3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -373,9 +802,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jangjoonmo/Desktop/dreamy/dreamy/dreamy/dreamy-bridging-header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -383,13 +813,14 @@
 		94802DB229CDD0130015AC3D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -427,8 +858,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jangjoonmo/Desktop/dreamy/dreamy/dreamy/dreamy-bridging-header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -436,23 +869,37 @@
 		};
 		94802DB429CDD0130015AC3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BB666D2082F4703B885DFAC /* Pods-dreamy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/dreamy/IOS_DaumMap_SDK_1.4.0/lib/DaumMap.embeddedframework",
+					"$(PROJECT_DIR)/dreamy/DaumMap.embeddedframework",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dreamy/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = jm.dreamy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -463,23 +910,37 @@
 		};
 		94802DB529CDD0130015AC3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C4C9CAA0F08A80EF69A5AF1 /* Pods-dreamy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/dreamy/IOS_DaumMap_SDK_1.4.0/lib/DaumMap.embeddedframework",
+					"$(PROJECT_DIR)/dreamy/DaumMap.embeddedframework",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dreamy/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = jm.dreamy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -490,6 +951,7 @@
 		};
 		94802DB729CDD0130015AC3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D5A8718F1E6943B207382B3 /* Pods-dreamyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -509,6 +971,7 @@
 		};
 		94802DB829CDD0130015AC3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1070910227BB246771FC5C80 /* Pods-dreamyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +991,7 @@
 		};
 		94802DBA29CDD0130015AC3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF639CE75FA8C0A26E63A510 /* Pods-dreamy-dreamyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +1009,7 @@
 		};
 		94802DBB29CDD0130015AC3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A062064C2845A79C5647E80 /* Pods-dreamy-dreamyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
