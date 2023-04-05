@@ -8,7 +8,7 @@
 import Foundation
 
 // 마커 추가 함수
-//func makeMarker(result: Model){
+//func makeMarker(){
 //
 //        /*
 //        저는 서버 api를 통해 가져온 데이터를 resultList에 담았어요
@@ -17,19 +17,23 @@ import Foundation
 //
 //        // cnt로 마커의 tag를 구분
 //        var cnt = 0
-//    for item in result.items {
-//        self.mapPoint1 = MTMapPoint(geoCoord: MTMapPointGeo(latitude: item.storePointLat, longitude: item.storePointLng
+//    var mapPoint1: MTMapPoint?
+//    var poiItem1: MTMapPOIItem?
+//
+//    for item in items {
+//        mapPoint1 = MTMapPoint(geoCoord: MTMapPointGeo(latitude: item.storePointLat, longitude: item.storePointLng
 //            ))
 //            poiItem1 = MTMapPOIItem()
 //            // 핀 색상 설정
 //            poiItem1?.markerType = MTMapPOIItemMarkerType.redPin
 //            poiItem1?.mapPoint = mapPoint1
 //            // 핀 이름 설정
-//            poiItem1?.itemName = item.placeName
+//            poiItem1?.itemName = item.storeName
 //            // 태그 설정
 //            poiItem1?.tag = cnt
 //            // 맵뷰에 추가!
 //            mapView!.add(poiItem1)
+//        
 //            cnt += 1
 //        }
 //    }

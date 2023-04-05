@@ -68,7 +68,7 @@ class TableViewCell: UITableViewCell{   //테이블뷰에 들어갈 셀 클래�
 }
 
 extension TableViewCell {   //cell에 들어갈 내용 처리 configure 함수
-    public func configure(image: UIImage, storename: String, categoryname: String ) {   //가게명, 이미지 초기화
+    public func configure(image: UIImage, storename: String, categoryname: String ) {   // configure: 가게명, 이미지 초기화 메소드
         self.storeName.text = storename
         self.imageView?.image = image
         self.categoryName.text = categoryname
@@ -91,5 +91,6 @@ extension TableViewCell {   //cell에 들어갈 내용 처리 configure 함수
         }
 //        self.categoryName.text = categoryname
     }
+    
 }
 

@@ -20,13 +20,41 @@ struct LocationInfo {//위도 경도
     var longitude: Double?  //경도
 }
 
-struct StoreDB {
-    var StoreID, StoreType, Category, SubCategory, StorePoitLat, StorePoitLng, StoreName, Address : String,
-        DayStart, DayFinish, SatStart, SatFinish, HoliStart, HoliFinish, Item, Provided1, Provided2, Phone, StorePhoto, WorkDay : String?
+struct StoreDB: Codable {
+    let StoreID: Int
+    let StoreType, StoreName: String
+    let StorePointLat, StorePointLng : Double
+    let Distance: Double?
+    let Category, SubCategory, Address: String?
+    let DayStart, DayFinish, SatStart, SatFinish, HoliStart, HoliFinish, Item, Provided1, Provided2, Phone, StorePhoto, WorkDay : String?
+    
+    enum CodingKeys: String, CodingKey {
+        case StoreID = "StoreID"
+        case StoreType = "StoreType"
+        case StorePointLat = "StorePointLat"
+        case StorePointLng = "StorePointLng"
+        case StoreName = "StoreName"
+        case Distance = "Distance"
+        case Category = "Category"
+        case SubCategory = "SubCategory"
+        case Address = "Address"
+        case DayStart = "DayStart"
+        case DayFinish = "DayFinish"
+        case SatStart = "SatStart"
+        case SatFinish = "SatFinish"
+        case HoliStart = "HoliStart"
+        case HoliFinish = "HoliFinish"
+        case Item = "Item"
+        case Provided1 = "Provided1"
+        case Provided2 = "Provided2"
+        case Phone = "Phone"
+        case StorePhoto = "StorePhoto"
+        case WorkDay = "WorkDay"
+    }
     
 }
 struct MyPositionModel: Codable {   //내위치 띄우기 모델
-    let items: [MyPositionItem]
+    let items: [StoreDB]
     let total: Int
     
 //    enum CodingKeys: String, CodingKey {
@@ -83,43 +111,3 @@ struct AFDataResponse<T: Codable>: Codable {
         data = (try? values.decode(T.self, forKey: .data)) ?? nil
     }
 }
-
-//switch (categoryname, subcategoryname){
-//case ("1", "1"):
-//    self.categoryName.text = "한식"
-//case("1", "2"):
-//    self.categoryName.text = "일식"
-//case("1", "3"):
-//    self.categoryName.text = "중식"
-//case("1", "4"):
-//    self.categoryName.text = "양식"
-//case("1", "5"):
-//    self.categoryName.text = "분식"
-//case("1", "6"):
-//    self.categoryName.text = "카페"
-//case("1", "99"):
-//    self.categoryName.text = "음식점"  //기타
-//case("2", "1"):
-//    self.categoryName.text = "대형마트"
-//case("2", "2"):
-//    self.categoryName.text = "편의점"
-//case("2", "99"):
-//    self.categoryName.text = "마트"   //기타
-//case("4", "1"):
-//    self.categoryName.text = "국어 교육"
-//case("4", "2"):
-//    self.categoryName.text = "영어 교육"
-//case("4", "3"):
-//    self.categoryName.text = "수학 교육"
-//case("4", "4"):
-//    self.categoryName.text = "스터디카페"
-//case("4", "5"):
-//    self.categoryName.text = "스포츠 교육"
-//case("4", "5"):
-//    self.categoryName.text = "교육"
-//case("5", "99"):
-//    self.categoryName.text = "생활"
-//case("99", "99"):
-//    self.categoryName.text = "기타"
-//default: break
-//}
