@@ -9,9 +9,8 @@ import Foundation
 
 // ScrollableViewController: 클라이언트 코드에서 해당 프로토콜에 명시된 인터페이스에 접근
 final class CustomBottomSheetVC: UIViewController, ScrollableViewController {
-//    var datasource: [[String]] = []   //테스트용 가게명 및 카테고리
-//    var dataSource = [StoreInformation]() // 임시 datasource
-    var delegate: SendClickedStoreInfo?  //delegate 테스트 임시
+
+    var delegate: SendClickedStoreInfo?  //delegate 
     
     private let tableView = SelfSizingTableView(maxHeight: UIScreen.main.bounds.height * 0.7).then {    //tableView 셀프사이징
         $0.allowsSelection = true   //선택 가능한지
@@ -44,7 +43,7 @@ final class CustomBottomSheetVC: UIViewController, ScrollableViewController {
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-//        loadLocationsFromCSV()  //csv파일 데이터 로드
+        
         tableView.dataSource = self //테이블뷰에 dataSource 지정
         tableView.delegate = self
     }
@@ -74,8 +73,8 @@ extension CustomBottomSheetVC: UITableViewDataSource { //테이블뷰 DataSource
 extension CustomBottomSheetVC: UITableViewDelegate {   //테이블뷰 Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //셀 클릭 시
 
-//        delegate?.sendClickedStoreGeo(Lat: Double(datasource[indexPath.row][4])!, Long: Double(datasource[indexPath.row][5])!)
-        delegate?.sendClickedStoreInfo(storeInfo: datasource[indexPath.row + 2])    //셀 클릭 시 델리게이트 구현 한거 보내기
+//        delegate?.sendClickedStoreInfo(storeInfo: datasource[indexPath.row + 2])    //셀 클릭 시 델리게이트 구현 한거 보내기
+        delegate?.sendClickedStoreInfo(storeItem: items[indexPath.row])    //해당 셀의 가게 Item 전달
         dismiss(animated: true)//바텀 시트 내리기
         print("selected \(indexPath.row)")
     }
@@ -87,7 +86,7 @@ extension CustomBottomSheetVC: UITableViewDelegate {   //테이블뷰 Delegate
 
 protocol SendClickedStoreInfo{  // 셀 클릭 프로토콜 
     
-    func sendClickedStoreInfo(storeInfo: [String])
+    func sendClickedStoreInfo(storeItem: StoreDB)
 }
 
 

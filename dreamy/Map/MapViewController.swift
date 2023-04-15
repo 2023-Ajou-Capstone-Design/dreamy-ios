@@ -11,6 +11,7 @@ import SnapKit
 import Then
 import Alamofire
 
+
 let dbUrl = "http://3.130.31.88:5000" //api url
 let moMapPointGeo = MTMapPointGeo(latitude: 37.270126, longitude: 127.048794)   // 내 위치
 
@@ -24,8 +25,7 @@ class MapViewController: UIViewController, MTMapViewDelegate, SendClickedStoreIn
 //    var mapListVC: MapListViewController!
     
     var mapView: MTMapView? //카카오맵 뷰
-    var myCurrentLocation: LocationInfo?
-    
+
     var mapPoint1: MTMapPoint?
     var poiItem1: MTMapPOIItem?
 
@@ -73,14 +73,41 @@ class MapViewController: UIViewController, MTMapViewDelegate, SendClickedStoreIn
 //        print("Current Location: (\(myCurrentLocation?.latitude!), \(myCurrentLocation?.longitude!))")
 //        }
     
-    func sendClickedStoreInfo(storeInfo: [String]) {    //셀 클릭시 화면 이동
-        mapView?.setMapCenter(MTMapPoint(geoCoord: MTMapPointGeo(latitude: Double(storeInfo[4])!, longitude: Double(storeInfo[5])!)), zoomLevel: 1, animated: true)
+    func sendClickedStoreInfo(storeItem: StoreDB) {    //셀 클릭시 화면 이동
+        
+        mapView?.setMapCenter(MTMapPoint(geoCoord: MTMapPointGeo(latitude: storeItem.StorePointLat, longitude: storeItem.StorePointLng)), zoomLevel: 1, animated: true)
+                                         
         let poilItem = MTMapPOIItem()
-        poilItem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude:Double(storeInfo[4])!, longitude: Double(storeInfo[5])!))
+        poilItem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: storeItem.StorePointLat, longitude: storeItem.StorePointLng))
         poilItem.markerType = .redPin
-        poilItem.itemName = storeInfo[6]
+        poilItem.itemName = storeItem.StoreName
         mapView?.addPOIItems([poilItem])
         print("화면이동")
+        
+//        let storeDetailVC = StoreDetailViewController()
+//
+//        if let sheet = storeDetailVC.sheetPresentationController{
+//            sheet.detents = [.medium(), .large()]
+//            print("바텀 시트 오픈")
+//        }
+//        self.present(storeDetailVC, animated: true)
+//
+        
+//        storeDetailRequest(StoreID: storeItem.StoreID, StoreType: storeItem.StoreType) {
+//            //바텀 시트 구현
+//
+////            let storyboard = UIStoryboard(name: "StoreDetailView", bundle: Bundle.main)
+////            let bottomSheetVC = storyboard.instantiateViewController(identifier: "StoreDetailView")
+////
+////            guard let sheet = bottomSheetVC.presentationController as? UISheetPresentationController else{
+////                return
+////            }
+////            sheet.detents = [.medium(), .large()]
+////            sheet.largestUndimmedDetentIdentifier = .large
+////            sheet.prefersGrabberVisible = true
+////
+////            self.present(bottomSheetVC, animated: true)
+//        }
     }
     
     
@@ -118,10 +145,49 @@ class MapViewController: UIViewController, MTMapViewDelegate, SendClickedStoreIn
         }
     }
     @IBAction func martBtn(_ sender: UIButton) {    //마트 버튼
+        chooseSubCategoryRequest(Category: 2, SubCategory: 1) {
+            let cVC: CustomBottomSheetVC = CustomBottomSheetVC()
+            let bottomSheetViewController = BottomSheetViewController(isTouchPassable: false, contentViewController: cVC )
+            cVC.delegate = self // 바텀시트와 델리게이트 연결
+            self.present(bottomSheetViewController, animated: true)
+            print("편의점 카테고리 버튼 클릭")
+        }
     }
     @IBAction func eduBtn(_ sender: UIButton) { //교육 버튼
+        chooseCategoryRequest(Category: 4) {
+            let cVC: CustomBottomSheetVC = CustomBottomSheetVC()
+            let bottomSheetViewController = BottomSheetViewController(isTouchPassable: false, contentViewController: cVC )
+            cVC.delegate = self // 바텀시트와 델리게이트 연결
+            self.present(bottomSheetViewController, animated: true)
+            print("편의점 카테고리 버튼 클릭")
+        }
+
     }
     @IBAction func dreamBtn(_ sender: UIButton) {// 가맹점 버튼
+//        let storeDetailVC = StoreDetailViewController()
+//
+//        if let sheet = storeDetailVC.sheetPresentationController{
+//            sheet.detents = [.medium(), .large()]
+//            print("바텀 시트 오픈")
+//        }
+//        self.present(storeDetailVC, animated: true, completion: nil)
+        
+//        let navi = UINavigationController(rootViewController: StoreDetailViewController())
+//        self.present(navi, animated: true, completion: nil)
+
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let storeDetailVC = storyboard.instantiateViewController(identifier: "StoreDetailView")
+        
+        guard let sheet = storeDetailVC.presentationController as? UISheetPresentationController else{
+            print("sheet를 불러오지 못함")
+            return
+        }
+        sheet.detents = [.medium(), .large()]
+        sheet.largestUndimmedDetentIdentifier = .large
+        sheet.prefersGrabberVisible = true
+        
+        self.present(storeDetailVC, animated: true)
+        
     }
     @IBAction func goodBtn(_ sender: UIButton) {//선한영향력 버튼
     }
@@ -168,6 +234,10 @@ class MapViewController: UIViewController, MTMapViewDelegate, SendClickedStoreIn
             let index = poiItem.tag
         }
 
+    func presentationController(_ controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+        return self
+    }
+
 }//end of MapViewController Class
 
 
@@ -196,4 +266,3 @@ extension MapViewController: UISearchBarDelegate {
         }
     }
 }
-

@@ -59,12 +59,6 @@ class TableViewCell: UITableViewCell{   //테이블뷰에 들어갈 셀 클래�
         fatalError("init(coder:) has not been implemented")
     }
     
-//    func configure(image: UIImage, storename: String, categoryname: String ){   //가게명, 이미지 초기화
-//        self.storeName.text = storename
-//        self.imageView?.image = image
-//        self.categoryName.text = categoryname
-//    }
-    
 }
 
 extension TableViewCell {   //cell에 들어갈 내용 처리 configure 함수

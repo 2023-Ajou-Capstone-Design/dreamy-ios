@@ -8,17 +8,17 @@
 import Foundation
 import Alamofire
 
-struct StoreInformation {   //가게 정보
-    var storeImage: UIImage?
-    var storeName: String
-    var storeCategory: String
-    
-}
-
-struct LocationInfo {//위도 경도
-    var latitude: Double?   //위도
-    var longitude: Double?  //경도
-}
+//struct StoreInformation {   //가게 정보
+//    var storeImage: UIImage?
+//    var storeName: String
+//    var storeCategory: String
+//
+//}
+//
+//struct LocationInfo {//위도 경도
+//    var latitude: Double?   //위도
+//    var longitude: Double?  //경도
+//}
 
 struct StoreDB: Codable {
     let StoreID: Int
@@ -86,7 +86,6 @@ struct MyPositionItem: Codable {
            case storeType = "StoreType"
        }
 }
-var datasource: [[String]] = [[]]
 
 struct AFDataResponse<T: Codable>: Codable {
     
