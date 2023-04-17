@@ -70,8 +70,9 @@ class CustomCell: UITableViewCell {
 
 extension CustomCell {
     public func bind(model: FoodSharingCellModel) {
-        foodImage.image = model.Image
+//        foodImage.image = model.Photo1
         title.text = model.Title
-        
+        town.text = model.Town
+        uploadTime.text = model.UploadTime
     }
 }

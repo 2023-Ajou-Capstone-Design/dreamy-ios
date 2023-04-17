@@ -21,7 +21,7 @@ func FoodShareGetList(completion: @escaping () -> Void ) { // 내 위치 리퀘�
        
        // [http 요청 파라미터 지정 실시]
        let queryString : Parameters = [
-        "Town" : ""
+        "Town" : "수원시 영통구 원천동"
         
        ]
        
@@ -38,7 +38,7 @@ func FoodShareGetList(completion: @escaping () -> Void ) { // 내 위치 리퀘�
            headers: header // [헤더 지정]
        )
        .validate(statusCode: 200..<300)
-       .responseDecodable(of: MyPositionModel.self) { response in
+       .responseDecodable(of: FoodShareGetListModel.self) { response in
            switch response.result {
            case .success(_):
                do {
@@ -51,7 +51,8 @@ func FoodShareGetList(completion: @escaping () -> Void ) { // 내 위치 리퀘�
 
                    guard let Model = response.value else {return}
                    print(Model.items, Model.total)
-                   items.append(contentsOf: Model.items)
+                   
+                   foodList.append(contentsOf: Model.items)
                    
                    print("====================================")
                    print("")

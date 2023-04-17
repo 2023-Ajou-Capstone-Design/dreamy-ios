@@ -10,6 +10,13 @@ import UIKit
 class StoreDetailViewController: UIViewController {
     
     @IBOutlet var storeImage: UIImageView!
+    @IBOutlet var storeName: UILabel!
+    @IBOutlet var storeCategory: UILabel!
+    @IBOutlet var storeOperatingTime: UILabel!  //운영시간
+    @IBOutlet var storeAddress: UILabel!
+    @IBOutlet var storePhoneNumber: UILabel!
+    @IBOutlet var storeProvided1: UILabel!
+    @IBOutlet var storeProvided2: UILabel!
     
     
     override func viewDidLoad() {

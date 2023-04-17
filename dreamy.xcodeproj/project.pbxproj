@@ -15,6 +15,7 @@
 		946336FA29EAF6FD002EC3DE /* FoodShareLoadDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946336F929EAF6FD002EC3DE /* FoodShareLoadDB.swift */; };
 		946336FC29EB07B2002EC3DE /* FoodSharingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946336FB29EB07B2002EC3DE /* FoodSharingModel.swift */; };
 		946336FE29EB0933002EC3DE /* FoodSharingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946336FD29EB0933002EC3DE /* FoodSharingListCell.swift */; };
+		9463370029EDC5F5002EC3DE /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946336FF29EDC5F5002EC3DE /* LogoutViewController.swift */; };
 		947C271529CF1DE600FDC3F8 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BF454A29CF1D54002D855E /* libc++.tbd */; };
 		947C271729CF1E0A00FDC3F8 /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 947C271629CF1E0A00FDC3F8 /* libc++abi.tbd */; };
 		947C271A29CF2F5400FDC3F8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C271929CF2F5400FDC3F8 /* TableViewCell.swift */; };
@@ -22,7 +23,7 @@
 		947C272029CF38B500FDC3F8 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C271F29CF38B500FDC3F8 /* Search.swift */; };
 		947C272229CF395F00FDC3F8 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C272129CF395F00FDC3F8 /* MapPin.swift */; };
 		947C272429CF48F300FDC3F8 /* 1차_가게리스트.csv in Resources */ = {isa = PBXBuildFile; fileRef = 947C272329CF48F300FDC3F8 /* 1차_가게리스트.csv */; };
-		947C272729CF589C00FDC3F8 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C272629CF589C00FDC3F8 /* Struct.swift */; };
+		947C272729CF589C00FDC3F8 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C272629CF589C00FDC3F8 /* MapModel.swift */; };
 		947C272929CF842F00FDC3F8 /* MapLoadDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C272829CF842F00FDC3F8 /* MapLoadDB.swift */; };
 		94802D8A29CDD0120015AC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94802D8929CDD0120015AC3D /* AppDelegate.swift */; };
 		94802D8C29CDD0120015AC3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94802D8B29CDD0120015AC3D /* SceneDelegate.swift */; };
@@ -110,13 +111,14 @@
 		946336F929EAF6FD002EC3DE /* FoodShareLoadDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodShareLoadDB.swift; sourceTree = "<group>"; };
 		946336FB29EB07B2002EC3DE /* FoodSharingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSharingModel.swift; sourceTree = "<group>"; };
 		946336FD29EB0933002EC3DE /* FoodSharingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSharingListCell.swift; sourceTree = "<group>"; };
+		946336FF29EDC5F5002EC3DE /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		947C271629CF1E0A00FDC3F8 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
 		947C271929CF2F5400FDC3F8 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		947C271C29CF2FE400FDC3F8 /* CustomBottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomSheetVC.swift; sourceTree = "<group>"; };
 		947C271F29CF38B500FDC3F8 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		947C272129CF395F00FDC3F8 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		947C272329CF48F300FDC3F8 /* 1차_가게리스트.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "1차_가게리스트.csv"; path = "../../../../Downloads/1차_가게리스트.csv"; sourceTree = "<group>"; };
-		947C272629CF589C00FDC3F8 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		947C272629CF589C00FDC3F8 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		947C272829CF842F00FDC3F8 /* MapLoadDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLoadDB.swift; sourceTree = "<group>"; };
 		94802D8629CDD0120015AC3D /* dreamy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dreamy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94802D8929CDD0120015AC3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				946336F429E97BFC002EC3DE /* LoginViewController.swift */,
+				946336FF29EDC5F5002EC3DE /* LogoutViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -235,8 +238,9 @@
 		946336F629EAF478002EC3DE /* FoodSharing */ = {
 			isa = PBXGroup;
 			children = (
-				946336F729EAF48F002EC3DE /* FoodSharingListVC.swift */,
 				946336FB29EB07B2002EC3DE /* FoodSharingModel.swift */,
+				946336F929EAF6FD002EC3DE /* FoodShareLoadDB.swift */,
+				946336F729EAF48F002EC3DE /* FoodSharingListVC.swift */,
 				946336FD29EB0933002EC3DE /* FoodSharingListCell.swift */,
 			);
 			path = FoodSharing;
@@ -265,9 +269,8 @@
 		947C272529CF587200FDC3F8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				947C272629CF589C00FDC3F8 /* Struct.swift */,
+				947C272629CF589C00FDC3F8 /* MapModel.swift */,
 				947C272829CF842F00FDC3F8 /* MapLoadDB.swift */,
-				946336F929EAF6FD002EC3DE /* FoodShareLoadDB.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -716,7 +719,8 @@
 				94802D9429CDD0120015AC3D /* dreamy.xcdatamodeld in Sources */,
 				94802D8A29CDD0120015AC3D /* AppDelegate.swift in Sources */,
 				9480304829CE073B0015AC3D /* MapViewController.swift in Sources */,
-				947C272729CF589C00FDC3F8 /* Struct.swift in Sources */,
+				9463370029EDC5F5002EC3DE /* LogoutViewController.swift in Sources */,
+				947C272729CF589C00FDC3F8 /* MapModel.swift in Sources */,
 				947C271A29CF2F5400FDC3F8 /* TableViewCell.swift in Sources */,
 				94BF454229CEF165002D855E /* TouchBlockIntrinsicPanelLayout.swift in Sources */,
 				947C272229CF395F00FDC3F8 /* MapPin.swift in Sources */,
