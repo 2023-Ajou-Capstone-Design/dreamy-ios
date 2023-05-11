@@ -78,35 +78,34 @@ class MapViewController: UIViewController, MTMapViewDelegate, SendClickedStoreIn
                                          
         let poilItem = MTMapPOIItem()
         poilItem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: storeItem.StorePointLat, longitude: storeItem.StorePointLng))
-        poilItem.markerType = .bluePin
+        poilItem.markerType = .yellowPin
         poilItem.itemName = storeItem.StoreName
         mapView?.addPOIItems([poilItem])
         print("화면이동")
         
-//        let storeDetailVC = StoreDetailViewController()
-//
-//        if let sheet = storeDetailVC.sheetPresentationController{
-//            sheet.detents = [.medium(), .large()]
-//            print("바텀 시트 오픈")
-//        }
-//        self.present(storeDetailVC, animated: true)
-//
-        
-//        storeDetailRequest(StoreID: storeItem.StoreID, StoreType: storeItem.StoreType) {
-//            //바텀 시트 구현
-//
-////            let storyboard = UIStoryboard(name: "StoreDetailView", bundle: Bundle.main)
-////            let bottomSheetVC = storyboard.instantiateViewController(identifier: "StoreDetailView")
-////
-////            guard let sheet = bottomSheetVC.presentationController as? UISheetPresentationController else{
-////                return
-////            }
-////            sheet.detents = [.medium(), .large()]
-////            sheet.largestUndimmedDetentIdentifier = .large
-////            sheet.prefersGrabberVisible = true
-////
-////            self.present(bottomSheetVC, animated: true)
-//        }
+        storeDetailRequest(StoreID: storeItem.StoreID, StoreType: storeItem.StoreType){ //가게 클릭 리퀘스트 요청
+            
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let storeDetailVC = storyboard.instantiateViewController(identifier: "StoreDetailView") as? StoreDetailViewController
+            
+            
+            guard let sheet = storeDetailVC?.presentationController as? UISheetPresentationController else{
+                
+                print("sheet를 불러오지 못함")
+                return
+            }
+            storeDetailVC?.configure(item: items[0])
+            sheet.detents = [.medium(), .large()]
+            sheet.largestUndimmedDetentIdentifier = .large
+            sheet.prefersGrabberVisible = true
+            self.present(storeDetailVC!, animated: true)
+            
+            
+//            StoreDetailViewController().configure(item: items[0])
+
+        }
+
     }
     
     
@@ -131,7 +130,7 @@ class MapViewController: UIViewController, MTMapViewDelegate, SendClickedStoreIn
             self.mapPoint1 = MTMapPoint(geoCoord: MTMapPointGeo( latitude: Double(item.StorePointLat), longitude: Double(item.StorePointLng)) )
                 poiItem1 = MTMapPOIItem()
                 // 핀 색상 설정
-                poiItem1?.markerType = MTMapPOIItemMarkerType.bluePin
+                poiItem1?.markerType = MTMapPOIItemMarkerType.yellowPin
                 poiItem1?.mapPoint = mapPoint1
                 // 핀 이름 설정
             poiItem1?.itemName = item.StoreName
@@ -183,7 +182,7 @@ extension MapViewController: UISearchBarDelegate {
     }
 }
 
-extension MapViewController{    //버튼 처리 
+extension MapViewController{    //버튼 처리
     
     @IBAction func categoryBtn(_ sender: UIButton) {//음식점 카테고리 버튼
         chooseCategoryRequest(Category: 1) {
@@ -267,3 +266,5 @@ extension MapViewController{    //버튼 처리
     }
     
 }
+
+

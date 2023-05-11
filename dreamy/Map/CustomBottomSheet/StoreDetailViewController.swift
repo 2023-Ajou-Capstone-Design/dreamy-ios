@@ -11,6 +11,7 @@ class StoreDetailViewController: UIViewController {
     
     @IBOutlet var storeImage: UIImageView!
     @IBOutlet var storeName: UILabel!
+    
     @IBOutlet var storeCategory: UILabel!
     @IBOutlet var storeOperatingTime: UILabel!  //운영시간
     @IBOutlet var storeAddress: UILabel!
@@ -21,12 +22,12 @@ class StoreDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configure(item: items[0])
         setupSheet()
+        
         // Do any additional setup after loading the view.
     }
     
-
     private func setupSheet() {
         /// 밑으로 내려도 dismiss되지 않는 옵션 값
 //        isModalInPresentation = true
@@ -46,5 +47,31 @@ class StoreDetailViewController: UIViewController {
     //      sheet.preferredCornerRadius = 32.0
         }
     }
+    
 
+}
+
+extension StoreDetailViewController{
+    
+   public func configure(item: StoreDB){
+        
+       if let storeName = self.storeName {
+               storeName.text = item.StoreName
+           }
+           if let storeCategory = self.storeCategory {
+               storeCategory.text = item.CateName
+           }
+           if let storeAddress = self.storeAddress {
+               storeAddress.text = item.Address
+           }
+           if let storePhoneNumber = self.storePhoneNumber {
+               storePhoneNumber.text = item.Phone
+           }
+           if let storeProvided1 = self.storeProvided1 {
+               storeProvided1.text = item.Provided1
+           }
+           if let storeProvided2 = self.storeProvided2 {
+               storeProvided2.text = item.Provided2
+           }
+    }
 }

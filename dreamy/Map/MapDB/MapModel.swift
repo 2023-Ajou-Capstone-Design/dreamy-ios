@@ -25,8 +25,9 @@ struct StoreDB: Codable {
     let StoreType, StoreName: String
     let StorePointLat, StorePointLng : Double
     let Distance: Double?
-    let Category, SubCategory, Address: String?
+    let Category, SubCategory, Address, DetailAddress: String?
     let DayStart, DayFinish, SatStart, SatFinish, HoliStart, HoliFinish, Item, Provided1, Provided2, Phone, StorePhoto, WorkDay : String?
+    let CateName, SubCateName: String?  //카테,서브카테 네임
     
     enum CodingKeys: String, CodingKey {
         case StoreID = "StoreID"
@@ -50,6 +51,10 @@ struct StoreDB: Codable {
         case Phone = "Phone"
         case StorePhoto = "StorePhoto"
         case WorkDay = "WorkDay"
+        
+        case CateName = "CateName"
+        case SubCateName = "SubCateName"
+        case DetailAddress = "DetailAddress"
     }
     
 }

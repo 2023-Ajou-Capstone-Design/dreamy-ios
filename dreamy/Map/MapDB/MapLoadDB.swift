@@ -411,7 +411,7 @@ func chooseStoreTypeRequest(StoreType: Int, completion: @escaping () -> Void ) {
     
 }//end chooseStoreTypeRequest
 
-func storeDetailRequest(StoreID: Int, StoreType: String, completion: @escaping () -> Void ) {  // 선한영향력/가맹점 선택
+func storeDetailRequest(StoreID: Int, StoreType: String, completion: @escaping () -> Void ) {  // 가게 셀 클릭시 상세페이지
        
        // [http 요청 주소 지정]
        let url = "http://3.130.31.88:5000/map/StoreDetail?"

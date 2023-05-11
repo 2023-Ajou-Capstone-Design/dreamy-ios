@@ -10,6 +10,10 @@ import UIKit
 var foodList: [FoodSharingCellModel] = []
 
 class FoodSharingListVC: UIViewController {
+    
+    var delegate: sendFoodSharingDetail?    // 셀 클릭시 푸드쉐어링 글 상세 delegate
+    let foodDetailVC = FoodDetailVC()
+
 
     private lazy var tableView: UITableView = {
             let tableView = UITableView()
@@ -28,6 +32,8 @@ class FoodSharingListVC: UIViewController {
             view.backgroundColor = .white
             setupView()
             loadData()
+            
+            self.view.sendSubviewToBack(tableView)
         }
 
         private func setupView() {
@@ -48,6 +54,30 @@ class FoodSharingListVC: UIViewController {
 }
 
 extension FoodSharingListVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {// 셀 클릭시
+        
+
+//        FoodShareDetail(userID: foodList[indexPath.row].UserID, writingID: foodList[indexPath.row].WritingID){
+//
+//        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let foodDetailVC = storyboard.instantiateViewController(withIdentifier: "FoodDetailVC") as? FoodDetailVC
+        
+        foodDetailVC?.foodGetDetail(foodDetail: foodList[indexPath.row]){
+            self.navigationController?.pushViewController(foodDetailVC!, animated: true) // push
+
+        }
+        
+//        delegate?.sendFoodSharingDetailInfo(foodDetail: foodList[indexPath.row])    //해당 가게 cell 전달
+        
+//        DispatchQueue.main.async{
+//            self.show(foodDetailVC!, sender: self)
+//        }
+
+//        self.show(foodDetailVC!, sender: self)
+        
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {   // 셀 개수
         return foodList.count
@@ -60,6 +90,14 @@ extension FoodSharingListVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 56
+        return 80
     }
 }
+
+protocol sendFoodSharingDetail{
+    
+    func sendFoodSharingDetailInfo(foodDetail: FoodSharingCellModel)
+    
+}
+
+

@@ -22,7 +22,6 @@
 		947C271D29CF2FE400FDC3F8 /* CustomBottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C271C29CF2FE400FDC3F8 /* CustomBottomSheetVC.swift */; };
 		947C272029CF38B500FDC3F8 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C271F29CF38B500FDC3F8 /* Search.swift */; };
 		947C272229CF395F00FDC3F8 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C272129CF395F00FDC3F8 /* MapPin.swift */; };
-		947C272429CF48F300FDC3F8 /* 1차_가게리스트.csv in Resources */ = {isa = PBXBuildFile; fileRef = 947C272329CF48F300FDC3F8 /* 1차_가게리스트.csv */; };
 		947C272729CF589C00FDC3F8 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C272629CF589C00FDC3F8 /* MapModel.swift */; };
 		947C272929CF842F00FDC3F8 /* MapLoadDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C272829CF842F00FDC3F8 /* MapLoadDB.swift */; };
 		94802D8A29CDD0120015AC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94802D8929CDD0120015AC3D /* AppDelegate.swift */; };
@@ -70,6 +69,12 @@
 		9480304229CDD2970015AC3D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9480304129CDD2850015AC3D /* libsqlite3.tbd */; };
 		9480304429CDD6C40015AC3D /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9480301729CDD1B10015AC3D /* DaumMap.framework */; };
 		9480304829CE073B0015AC3D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9480304729CE073B0015AC3D /* MapViewController.swift */; };
+		949B19A22A06DBF8006CD9DA /* haveCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B19A12A06DBF8006CD9DA /* haveCardVC.swift */; };
+		949B19A42A06DEA2006CD9DA /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B19A32A06DEA2006CD9DA /* UserModel.swift */; };
+		949B19A62A07F605006CD9DA /* CardNumberAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B19A52A07F605006CD9DA /* CardNumberAlert.swift */; };
+		949B19A82A07F9FC006CD9DA /* TownRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B19A72A07F9FC006CD9DA /* TownRegisterVC.swift */; };
+		949B19AA2A080020006CD9DA /* FoodDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B19A92A080020006CD9DA /* FoodDetailVC.swift */; };
+		949B19AC2A0803B1006CD9DA /* FoodRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B19AB2A0803B1006CD9DA /* FoodRegisterVC.swift */; };
 		94BF454229CEF165002D855E /* TouchBlockIntrinsicPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BF454129CEF165002D855E /* TouchBlockIntrinsicPanelLayout.swift */; };
 		94BF454429CEF41B002D855E /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BF454329CEF41B002D855E /* BottomSheetViewController.swift */; };
 		94BF454629CEF4AB002D855E /* SelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BF454529CEF4AB002D855E /* SelfSizingTableView.swift */; };
@@ -117,7 +122,6 @@
 		947C271C29CF2FE400FDC3F8 /* CustomBottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomSheetVC.swift; sourceTree = "<group>"; };
 		947C271F29CF38B500FDC3F8 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		947C272129CF395F00FDC3F8 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
-		947C272329CF48F300FDC3F8 /* 1차_가게리스트.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "1차_가게리스트.csv"; path = "../../../../Downloads/1차_가게리스트.csv"; sourceTree = "<group>"; };
 		947C272629CF589C00FDC3F8 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		947C272829CF842F00FDC3F8 /* MapLoadDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLoadDB.swift; sourceTree = "<group>"; };
 		94802D8629CDD0120015AC3D /* dreamy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dreamy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +182,12 @@
 		9480304329CDD3490015AC3D /* dreamy-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dreamy-bridging-header.h"; sourceTree = "<group>"; };
 		9480304729CE073B0015AC3D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9481FA9833853C9A436FF0BD /* Pods_dreamyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dreamyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		949B19A12A06DBF8006CD9DA /* haveCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = haveCardVC.swift; sourceTree = "<group>"; };
+		949B19A32A06DEA2006CD9DA /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		949B19A52A07F605006CD9DA /* CardNumberAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberAlert.swift; sourceTree = "<group>"; };
+		949B19A72A07F9FC006CD9DA /* TownRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownRegisterVC.swift; sourceTree = "<group>"; };
+		949B19A92A080020006CD9DA /* FoodDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailVC.swift; sourceTree = "<group>"; };
+		949B19AB2A0803B1006CD9DA /* FoodRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRegisterVC.swift; sourceTree = "<group>"; };
 		94BF454129CEF165002D855E /* TouchBlockIntrinsicPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBlockIntrinsicPanelLayout.swift; sourceTree = "<group>"; };
 		94BF454329CEF41B002D855E /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		94BF454529CEF4AB002D855E /* SelfSizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingTableView.swift; sourceTree = "<group>"; };
@@ -231,6 +241,10 @@
 			children = (
 				946336F429E97BFC002EC3DE /* LoginViewController.swift */,
 				946336FF29EDC5F5002EC3DE /* LogoutViewController.swift */,
+				949B19A12A06DBF8006CD9DA /* haveCardVC.swift */,
+				949B19A32A06DEA2006CD9DA /* UserModel.swift */,
+				949B19A52A07F605006CD9DA /* CardNumberAlert.swift */,
+				949B19A72A07F9FC006CD9DA /* TownRegisterVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -242,6 +256,8 @@
 				946336F929EAF6FD002EC3DE /* FoodShareLoadDB.swift */,
 				946336F729EAF48F002EC3DE /* FoodSharingListVC.swift */,
 				946336FD29EB0933002EC3DE /* FoodSharingListCell.swift */,
+				949B19A92A080020006CD9DA /* FoodDetailVC.swift */,
+				949B19AB2A0803B1006CD9DA /* FoodRegisterVC.swift */,
 			);
 			path = FoodSharing;
 			sourceTree = "<group>";
@@ -266,18 +282,19 @@
 			path = KakaoMap;
 			sourceTree = "<group>";
 		};
-		947C272529CF587200FDC3F8 /* Common */ = {
+		947C272529CF587200FDC3F8 /* MapDB */ = {
 			isa = PBXGroup;
 			children = (
 				947C272629CF589C00FDC3F8 /* MapModel.swift */,
 				947C272829CF842F00FDC3F8 /* MapLoadDB.swift */,
 			);
-			path = Common;
+			path = MapDB;
 			sourceTree = "<group>";
 		};
 		947C272A29D203DA00FDC3F8 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				947C272529CF587200FDC3F8 /* MapDB */,
 				947C271E29CF389700FDC3F8 /* KakaoMap */,
 				947C271829CF2CD400FDC3F8 /* CustomBottomSheet */,
 				94BF454029CEF133002D855E /* BottomSheet */,
@@ -314,7 +331,6 @@
 				946336F629EAF478002EC3DE /* FoodSharing */,
 				946336F329E97B83002EC3DE /* Login */,
 				947C272A29D203DA00FDC3F8 /* Map */,
-				947C272529CF587200FDC3F8 /* Common */,
 				94802D8929CDD0120015AC3D /* AppDelegate.swift */,
 				94802D8B29CDD0120015AC3D /* SceneDelegate.swift */,
 				94802D8D29CDD0120015AC3D /* ViewController.swift */,
@@ -324,7 +340,6 @@
 				94802D9A29CDD0130015AC3D /* Info.plist */,
 				94802D9229CDD0120015AC3D /* dreamy.xcdatamodeld */,
 				9480304329CDD3490015AC3D /* dreamy-bridging-header.h */,
-				947C272329CF48F300FDC3F8 /* 1차_가게리스트.csv */,
 			);
 			path = dreamy;
 			sourceTree = "<group>";
@@ -570,7 +585,6 @@
 				9480302729CDD1B10015AC3D /* info_box.png in Resources */,
 				9480301D29CDD1B10015AC3D /* map_pin_custom@3x.png in Resources */,
 				9480303229CDD1B10015AC3D /* map_pin_shadow.png in Resources */,
-				947C272429CF48F300FDC3F8 /* 1차_가게리스트.csv in Resources */,
 				9480302529CDD1B10015AC3D /* map_present_tracking.png in Resources */,
 				9480301C29CDD1B10015AC3D /* detail_button.png in Resources */,
 				9480302F29CDD1B10015AC3D /* noimage.png in Resources */,
@@ -722,8 +736,12 @@
 				9463370029EDC5F5002EC3DE /* LogoutViewController.swift in Sources */,
 				947C272729CF589C00FDC3F8 /* MapModel.swift in Sources */,
 				947C271A29CF2F5400FDC3F8 /* TableViewCell.swift in Sources */,
+				949B19A82A07F9FC006CD9DA /* TownRegisterVC.swift in Sources */,
+				949B19A62A07F605006CD9DA /* CardNumberAlert.swift in Sources */,
+				949B19A22A06DBF8006CD9DA /* haveCardVC.swift in Sources */,
 				94BF454229CEF165002D855E /* TouchBlockIntrinsicPanelLayout.swift in Sources */,
 				947C272229CF395F00FDC3F8 /* MapPin.swift in Sources */,
+				949B19A42A06DEA2006CD9DA /* UserModel.swift in Sources */,
 				94BF454629CEF4AB002D855E /* SelfSizingTableView.swift in Sources */,
 				943860D429E324F300F86A9F /* StoreDetailViewController.swift in Sources */,
 				947C271D29CF2FE400FDC3F8 /* CustomBottomSheetVC.swift in Sources */,
@@ -732,6 +750,8 @@
 				946336F529E97BFC002EC3DE /* LoginViewController.swift in Sources */,
 				94BF454429CEF41B002D855E /* BottomSheetViewController.swift in Sources */,
 				946336F829EAF48F002EC3DE /* FoodSharingListVC.swift in Sources */,
+				949B19AC2A0803B1006CD9DA /* FoodRegisterVC.swift in Sources */,
+				949B19AA2A080020006CD9DA /* FoodDetailVC.swift in Sources */,
 				945D907A29D89383007F0FD2 /* ButtonCollectionViewCell.swift in Sources */,
 				947C272929CF842F00FDC3F8 /* MapLoadDB.swift in Sources */,
 				946336FC29EB07B2002EC3DE /* FoodSharingModel.swift in Sources */,

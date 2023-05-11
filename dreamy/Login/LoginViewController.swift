@@ -10,10 +10,13 @@ import KakaoSDKAuth
 import KakaoSDKUser
 import KakaoSDKCommon
 
-class LoginViewController: UIViewController {
+var myUser: userModel?  = nil  // DB로 보내줄 User정보
 
+class LoginViewController: UIViewController {   //로그인 뷰 컨트롤러
+    
     @IBOutlet var loginWithKakaoImageView: UIButton!
     @IBOutlet var loginWithKakaoaccountImageView: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,138 +25,156 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-            super.viewDidAppear(animated)
-            
-            // ✅ 유효한 토큰 검사
-            if (AuthApi.hasToken()) {
-                UserApi.shared.accessTokenInfo { (_, error) in
-                    if let error = error {
-                        if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
-                            //로그인 필요
-                        }
-                        else {
-                            //기타 에러
-                        }
+        super.viewDidAppear(animated)
+        
+        // ✅ 유효한 토큰 검사
+        if (AuthApi.hasToken()) {
+            UserApi.shared.accessTokenInfo { (_, error) in
+                if let error = error {
+                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
+                        //로그인 필요
                     }
                     else {
-                        //토큰 유효성 체크 성공(필요 시 토큰 갱신됨)
-                        
-                        // ✅ 사용자 정보를 가져오고 화면전환을 하는 커스텀 메서드
-                        self.getUserInfo()
+                        //기타 에러
                     }
                 }
+                else {
+                    //토큰 유효성 체크 성공(필요 시 토큰 갱신됨)
+                    
+                    // ✅ 사용자 정보를 가져오고 화면전환을 하는 커스텀 메서드
+                    self.getUserInfo()
+                }
+            }
+        }
+        else {
+            //로그인 필요
+        }
+    }
+}
+
+// MARK: - Extensions
+extension LoginViewController {
+    
+    //        private func setUI() {
+    //
+    //            // ✅ 카카오 로그인 이미지 설정
+    //            loginWithKakaoImageView.contentMode = .scaleAspectFit
+    //            loginWithKakaoImageView.image = UIImage(named: "kakao_login_large_wide")
+    //
+    //            loginWithKakaoaccountImageView.contentMode = .scaleAspectFit
+    //            loginWithKakaoaccountImageView.image = UIImage(named: "kakao_login_large_wide")
+    //
+    //            self.navigationController?.navigationBar.isHidden = true
+    //        }
+    
+    // ✅ 이미지뷰에 제스쳐 추가
+    private func setGestureRecognizer() {
+        let loginKakao = UITapGestureRecognizer(target: self, action: #selector(loginKakao))
+        loginWithKakaoImageView.isUserInteractionEnabled = true
+        loginWithKakaoImageView.addGestureRecognizer(loginKakao)
+        
+        let loginKakaoAccount = UITapGestureRecognizer(target: self, action: #selector(loginKakaoAccount))
+        loginWithKakaoaccountImageView.isUserInteractionEnabled = true
+        loginWithKakaoaccountImageView.addGestureRecognizer(loginKakaoAccount)
+    }
+    
+    private func getUserInfo() {
+        // ✅ 사용자 정보 가져오기
+        UserApi.shared.me() { [self](user, error) in
+            if let error = error {
+                print(error)
             }
             else {
-                //로그인 필요
+                print("me() success.")
+                
+//                 ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
+                                    let nickname = user?.kakaoAccount?.profile?.nickname
+                                    let email = user?.kakaoAccount?.email
+                //
+                //                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LogoutViewController") as? LogoutViewController else { return }
+                //
+                // ✅ 사용자 정보 넘기기
+                userInfo.set(nickname, forKey: "User_AKA")  //카카오로 받은 닉네임을 userInfo에 추가
+                userInfo.set(email, forKey: "User_Email")   //카카오로 받은 Email을 userInfo에 추가
+                
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") else { return }
+                
+                self.navigationController?.pushViewController(nextVC, animated: true)
             }
         }
     }
-
-    // MARK: - Extensions
-    extension LoginViewController {
+    
+    // MARK: - @objc Methods
+    
+    // ✅ 카카오로그인 이미지에 UITapGestureRecognizer 를 등록할 때 사용할 @objc 메서드.
+    // ✅ 카카오톡으로 로그인
+    @objc
+    func loginKakao() {
+        print("loginKakao() called.")
         
-        // MARK: - Methods
-        
-//        private func setUI() {
-//
-//            // ✅ 카카오 로그인 이미지 설정
-//            loginWithKakaoImageView.contentMode = .scaleAspectFit
-//            loginWithKakaoImageView.image = UIImage(named: "kakao_login_large_wide")
-//
-//            loginWithKakaoaccountImageView.contentMode = .scaleAspectFit
-//            loginWithKakaoaccountImageView.image = UIImage(named: "kakao_login_large_wide")
-//
-//            self.navigationController?.navigationBar.isHidden = true
-//        }
-        
-        // ✅ 이미지뷰에 제스쳐 추가
-        private func setGestureRecognizer() {
-            let loginKakao = UITapGestureRecognizer(target: self, action: #selector(loginKakao))
-            loginWithKakaoImageView.isUserInteractionEnabled = true
-            loginWithKakaoImageView.addGestureRecognizer(loginKakao)
-            
-            let loginKakaoAccount = UITapGestureRecognizer(target: self, action: #selector(loginKakaoAccount))
-            loginWithKakaoaccountImageView.isUserInteractionEnabled = true
-            loginWithKakaoaccountImageView.addGestureRecognizer(loginKakaoAccount)
-        }
-        
-        private func getUserInfo() {
-            // ✅ 사용자 정보 가져오기
-            UserApi.shared.me() {(user, error) in
+        // ✅ 카카오톡 설치 여부 확인
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 if let error = error {
                     print(error)
                 }
                 else {
-                    print("me() success.")
-                    
-                    // ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
-//                    let nickname = user?.kakaoAccount?.profile?.nickname
-//                    let email = user?.kakaoAccount?.email
-//
-//                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LogoutViewController") as? LogoutViewController else { return }
-//
-//                    // ✅ 사용자 정보 넘기기
-//                    nextVC.nickname = nickname
-//                    nextVC.email = email
-                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") else { return }
-
-                    self.navigationController?.pushViewController(nextVC, animated: true)
-                }
-            }
-        }
-        
-        // MARK: - @objc Methods
-        
-        // ✅ 카카오로그인 이미지에 UITapGestureRecognizer 를 등록할 때 사용할 @objc 메서드.
-        // ✅ 카카오톡으로 로그인
-        @objc
-        func loginKakao() {
-            print("loginKakao() called.")
-            
-            // ✅ 카카오톡 설치 여부 확인
-            if (UserApi.isKakaoTalkLoginAvailable()) {
-                UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                    if let error = error {
-                        print(error)
-                    }
-                    else {
-                        print("loginWithKakaoTalk() success.")
-                        
-                        // ✅ 회원가입 성공 시 oauthToken 저장
-    //                    let kakoOauthToken = oauthToken
-                        //UserDefaults.standard.set(kakoOauthToken, forKey: "KakoOauthToken")
-                        
-                        // ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
-                        self.getUserInfo()
-                    }
-                }
-            }
-            // ✅ 카카오톡 미설치
-            else {
-                print("카카오톡 미설치")
-            }
-        }
-        
-        // ✅ 카카오로그인 이미지에 UITapGestureRecognizer 를 등록할 때 사용할 @objc 메서드.
-        // ✅ 카카오계정으로 로그인
-        @objc
-        func loginKakaoAccount() {
-            print("loginKakaoAccount() called.")
-            
-            // ✅ 기본 웹 브라우저를 사용하여 로그인 진행.
-            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                }
-                else {
-                    print("loginWithKakaoAccount() success.")
+                    print("loginWithKakaoTalk() success.")
                     
                     // ✅ 회원가입 성공 시 oauthToken 저장
-                    // _ = oauthToken
+                    //                    let kakoOauthToken = oauthToken
+                    //UserDefaults.standard.set(kakoOauthToken, forKey: "KakoOauthToken")
                     
                     // ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
                     self.getUserInfo()
                 }
             }
         }
+        // ✅ 카카오톡 미설치
+        else {
+            print("카카오톡 미설치")
+        }
     }
+    
+    // ✅ 카카오로그인 이미지에 UITapGestureRecognizer 를 등록할 때 사용할 @objc 메서드.
+    // ✅ 카카오계정으로 로그인
+    @objc
+    func loginKakaoAccount() {
+        print("loginKakaoAccount() called.")
+        
+        // ✅ 기본 웹 브라우저를 사용하여 로그인 진행.
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("loginWithKakaoAccount() success.")
+                
+                // ✅ 회원가입 성공 시 oauthToken 저장
+                // _ = oauthToken
+                                
+//                showHaveCard(vc: self)
+                showTownRegister(vc: self)
+                
+                // ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
+                self.getUserInfo()
+            }
+        }
+    }
+}
+
+func showHaveCard(vc: UIViewController) {   //아동급식카드 여부 팝업창 띄우기
+    print("급식카드 보유 팝업창 오픈")
+    
+    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+    
+    let popupVC = storyboard.instantiateViewController(identifier: "haveCardVC")
+    
+    popupVC.modalPresentationStyle = .overCurrentContext
+    
+    
+    vc.dismiss(animated: false){
+        vc.present(popupVC, animated: false, completion: nil)
+    }
+    
+}

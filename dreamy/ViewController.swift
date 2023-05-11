@@ -20,7 +20,7 @@ class ViewController: UIViewController, MTMapViewDelegate {
 
 
     @IBAction func logoutBtn(_ sender: Any) {   //로그아웃 버튼
-        UserApi.shared.logout {(error) in
+        UserApi.shared.unlink {(error) in
             if let error = error {
                 print(error)
             }
