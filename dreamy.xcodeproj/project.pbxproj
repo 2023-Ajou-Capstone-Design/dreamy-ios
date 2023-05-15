@@ -80,6 +80,7 @@
 		94BF454629CEF4AB002D855E /* SelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BF454529CEF4AB002D855E /* SelfSizingTableView.swift */; };
 		94BF454829CF1BE5002D855E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BF454729CF1BE5002D855E /* OpenGLES.framework */; };
 		94BF454D29CF1DAF002D855E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BF454C29CF1D68002D855E /* libxml2.tbd */; };
+		94E8E7302A11FA5F004B7664 /* LoginLoadDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8E72F2A11FA5F004B7664 /* LoginLoadDB.swift */; };
 		EB89301681AF71EBABA0D02A /* Pods_dreamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8D638761698E0678212EC8 /* Pods_dreamy.framework */; };
 		EEFEF409746F144DAC1981A9 /* Pods_dreamy_dreamyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E9606E2AFC4D7900B6856A /* Pods_dreamy_dreamyUITests.framework */; };
 /* End PBXBuildFile section */
@@ -194,6 +195,7 @@
 		94BF454729CF1BE5002D855E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		94BF454A29CF1D54002D855E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		94BF454C29CF1D68002D855E /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		94E8E72F2A11FA5F004B7664 /* LoginLoadDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLoadDB.swift; sourceTree = "<group>"; };
 		EF639CE75FA8C0A26E63A510 /* Pods-dreamy-dreamyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamy-dreamyUITests.debug.xcconfig"; path = "Target Support Files/Pods-dreamy-dreamyUITests/Pods-dreamy-dreamyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,6 +247,7 @@
 				949B19A32A06DEA2006CD9DA /* UserModel.swift */,
 				949B19A52A07F605006CD9DA /* CardNumberAlert.swift */,
 				949B19A72A07F9FC006CD9DA /* TownRegisterVC.swift */,
+				94E8E72F2A11FA5F004B7664 /* LoginLoadDB.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 		94802D8829CDD0120015AC3D /* dreamy */ = {
 			isa = PBXGroup;
 			children = (
+				94E8E7312A120420004B7664 /* Chat */,
 				946336F629EAF478002EC3DE /* FoodSharing */,
 				946336F329E97B83002EC3DE /* Login */,
 				947C272A29D203DA00FDC3F8 /* Map */,
@@ -448,6 +452,13 @@
 				94BF454529CEF4AB002D855E /* SelfSizingTableView.swift */,
 			);
 			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		94E8E7312A120420004B7664 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		DEE4D7C81D3316DCD91B15BF /* Pods */ = {
@@ -757,6 +768,7 @@
 				946336FC29EB07B2002EC3DE /* FoodSharingModel.swift in Sources */,
 				946336FE29EB0933002EC3DE /* FoodSharingListCell.swift in Sources */,
 				946336FA29EAF6FD002EC3DE /* FoodShareLoadDB.swift in Sources */,
+				94E8E7302A11FA5F004B7664 /* LoginLoadDB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

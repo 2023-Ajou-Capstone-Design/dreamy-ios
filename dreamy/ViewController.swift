@@ -18,7 +18,9 @@ class ViewController: UIViewController, MTMapViewDelegate {
       
     }
 
-
+    @IBOutlet var cardView: UIView!
+    @IBOutlet var cardText: UILabel!
+    
     @IBAction func logoutBtn(_ sender: Any) {   //로그아웃 버튼
         UserApi.shared.unlink {(error) in
             if let error = error {
@@ -27,11 +29,21 @@ class ViewController: UIViewController, MTMapViewDelegate {
             else {
                 print("logout() success.")
                 
+                firstLoginFlag = true   //최초 로그인 true
                 // ✅ 로그아웃 시 메인으로 보냄
                 self.navigationController?.popViewController(animated: true)
             }
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if userInfo.string(forKey: "User_Type") == "01"{    //결식아동이면
+            cardText.text = userInfo.string(forKey: "User_cardNumber")  //카드번호 보여주기
+        }
+        else{
+            cardView.isHidden = true//푸드쉐어러면 G드림카드 뷰 숨기기
+        }
     }
 }
 

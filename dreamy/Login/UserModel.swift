@@ -16,5 +16,4 @@ struct userModel: Codable{
     var Card: String?
     var Town: String?
     
-    
 }

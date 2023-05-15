@@ -11,6 +11,7 @@ import KakaoSDKUser
 import KakaoSDKCommon
 
 var myUser: userModel?  = nil  // DB로 보내줄 User정보
+var firstLoginFlag : Bool = false   //최초 로그인 여부
 
 class LoginViewController: UIViewController {   //로그인 뷰 컨트롤러
     
@@ -22,7 +23,19 @@ class LoginViewController: UIViewController {   //로그인 뷰 컨트롤러
         super.viewDidLoad()
         setGestureRecognizer()
         // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(_:)), name: NSNotification.Name("TownregisterNotification"), object: nil)   //동네 설정이 완료됐단 알림 받기
+
     }
+    
+    @objc func handleNotification(_ notification: Notification) {   // 알림 핸들링 함수
+            // Handle the notification and call getUserInfo
+            getUserInfo()
+        }
+        
+        deinit {
+            NotificationCenter.default.removeObserver(self)
+        }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -40,7 +53,7 @@ class LoginViewController: UIViewController {   //로그인 뷰 컨트롤러
                 }
                 else {
                     //토큰 유효성 체크 성공(필요 시 토큰 갱신됨)
-                    
+                    print("토큰 유효성 체크 성공")
                     // ✅ 사용자 정보를 가져오고 화면전환을 하는 커스텀 메서드
                     self.getUserInfo()
                 }
@@ -85,21 +98,27 @@ extension LoginViewController {
                 print(error)
             }
             else {
-                print("me() success.")
+                print("getUserInfo 함수 실행")
                 
 //                 ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
-                                    let nickname = user?.kakaoAccount?.profile?.nickname
+//                                    let nickname = user?.kakaoAccount?.profile?.nickname
                                     let email = user?.kakaoAccount?.email
                 //
                 //                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LogoutViewController") as? LogoutViewController else { return }
                 //
                 // ✅ 사용자 정보 넘기기
-                userInfo.set(nickname, forKey: "User_AKA")  //카카오로 받은 닉네임을 userInfo에 추가
                 userInfo.set(email, forKey: "User_Email")   //카카오로 받은 Email을 userInfo에 추가
                 
                 guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") else { return }
                 
                 self.navigationController?.pushViewController(nextVC, animated: true)
+                
+                print(userInfo.string(forKey: "User_Email"), userInfo.string(forKey: "User_AKA"), userInfo.string(forKey: "User_cardNumber"), userInfo.string(forKey: "User_Town"), userInfo.string(forKey: "User_Type"))
+                
+                if firstLoginFlag == true{//자동 로그인이 아닌 최초 로그인이면
+                    loginReqeust()  //로그인 리퀘스트
+                    firstLoginFlag = false
+                }
             }
         }
     }
@@ -126,7 +145,7 @@ extension LoginViewController {
                     //UserDefaults.standard.set(kakoOauthToken, forKey: "KakoOauthToken")
                     
                     // ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
-                    self.getUserInfo()
+//                    self.getUserInfo()
                 }
             }
         }
@@ -140,6 +159,7 @@ extension LoginViewController {
     // ✅ 카카오계정으로 로그인
     @objc
     func loginKakaoAccount() {
+        firstLoginFlag = true
         print("loginKakaoAccount() called.")
         
         // ✅ 기본 웹 브라우저를 사용하여 로그인 진행.
@@ -153,11 +173,10 @@ extension LoginViewController {
                 // ✅ 회원가입 성공 시 oauthToken 저장
                 // _ = oauthToken
                                 
-//                showHaveCard(vc: self)
-                showTownRegister(vc: self)
+                showHaveCard(vc: self)
                 
                 // ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
-                self.getUserInfo()
+//                self.getUserInfo()
             }
         }
     }
@@ -168,13 +187,23 @@ func showHaveCard(vc: UIViewController) {   //아동급식카드 여부 팝업�
     
     let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
     
-    let popupVC = storyboard.instantiateViewController(identifier: "haveCardVC")
+    guard let popupVC = storyboard.instantiateViewController(identifier: "haveCardVC") as? haveCardVC else { return }
+
+    popupVC.modalPresentationStyle = .overCurrentContext
+    
+    vc.present(popupVC, animated: false)
+    
+}
+
+func showTownRegister(vc: UIViewController) {   //아동급식카드 여부 팝업창 띄우기
+    print("동네 설정 뷰 open")
+    
+    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+    
+    let popupVC = storyboard.instantiateViewController(identifier: "TownRegisterVC")
     
     popupVC.modalPresentationStyle = .overCurrentContext
     
-    
-    vc.dismiss(animated: false){
-        vc.present(popupVC, animated: false, completion: nil)
-    }
+    vc.present(popupVC, animated: false, completion: nil)
     
 }
