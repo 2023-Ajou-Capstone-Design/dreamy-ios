@@ -12,6 +12,12 @@ target 'dreamy' do
   pod 'KakaoSDKCommon'
   pod 'KakaoSDKAuth'
   pod 'KakaoSDKUser'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+pod 'Firebase/Storage'
+pod 'Firebase/Firestore'
+pod 'MessageKit'
 
   # Pods for dreamy
 

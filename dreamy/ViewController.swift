@@ -7,6 +7,7 @@
 
 import UIKit
 import KakaoSDKUser
+import FirebaseAuth
 
 class ViewController: UIViewController, MTMapViewDelegate {
 
@@ -36,6 +37,15 @@ class ViewController: UIViewController, MTMapViewDelegate {
         }
         
     }
+    
+    @IBAction func chatBtn(_ sender: UIButton) {
+        UserDefaultManager.displayName = "mo"   //임시
+        Auth.auth().signInAnonymously()
+//        self.present(ChannelVC(currentUser: Auth.auth().currentUser!), animated: true)
+        self.navigationController?.pushViewController(ChannelVC(currentUser: Auth.auth().currentUser!), animated: true)
+//        navigationController?.setViewControllers([ChannelVC()], animated: true)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if userInfo.string(forKey: "User_Type") == "01"{    //결식아동이면

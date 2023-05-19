@@ -22,7 +22,7 @@ func loginReqeust() {  // 로그인 계정 추가
        let queryString : Parameters = [
         "Town" : userInfo.string(forKey: "User_Town") ?? "테스트 동네",
         "AKA" : userInfo.string(forKey: "User_AKA") ?? "테스트 닉네임",
-        "UserType" : userInfo.string(forKey: "User_Type") ?? "테스트 유저타입",
+        "userType" : userInfo.string(forKey: "User_Type") ?? "테스트 유저타입",
         "Card" : userInfo.string(forKey: "User_cardNumber") ?? "테스트 카드넘버",
         "UserPhoto" : "",
         "UserID" : userInfo.string(forKey: "User_Email") ?? "테스트 유저ID"

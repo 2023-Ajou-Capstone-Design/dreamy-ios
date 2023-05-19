@@ -188,11 +188,10 @@ extension MapViewController{    //버튼 처리
         chooseCategoryRequest(Category: 1) {
             
             let cVC: CustomBottomSheetVC = CustomBottomSheetVC()
-    //        let bottomSheetViewController = BottomSheetViewController(isTouchPassable: false, contentViewController: CustomBottomSheetVC() )
             let bottomSheetViewController = BottomSheetViewController(isTouchPassable: false, contentViewController: cVC )
             cVC.delegate = self // 바텀시트와 델리게이트 연결
             self.present(bottomSheetViewController, animated: true)
-//            present(bottomSheetViewController, animated: true)
+
             print("음식점 카테고리 버튼 클릭")
         }
        

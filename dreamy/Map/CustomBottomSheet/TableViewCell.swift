@@ -49,9 +49,7 @@ class TableViewCell: UITableViewCell{   //테이블뷰에 들어갈 셀 클래�
         categoryName.snp.makeConstraints{ (make) in
             make.top.equalTo(storeName.snp.bottom)
             make.leading.equalTo(storeImage.snp.trailing).offset(10)
-            
         }
-        
         
     }
     
