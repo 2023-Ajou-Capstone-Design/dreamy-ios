@@ -85,5 +85,5 @@ func loginReqeust() {  // 로그인 계정 추가
            }//end switch
        }// end responseDecodable
     
-}//end chooseStoreTypeRequest
+}//end LoginRequest
 

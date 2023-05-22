@@ -20,7 +20,7 @@ var items: [StoreDB] = []
 
 class MapViewController: UIViewController, MTMapViewDelegate, SendClickedStoreInfo{
 
-    
+
     @IBOutlet var mapSearchBar: UISearchBar!
 //    var mapListVC: MapListViewController!
     
@@ -222,7 +222,7 @@ extension MapViewController{    //버튼 처리
             let bottomSheetViewController = BottomSheetViewController(isTouchPassable: false, contentViewController: cVC )
             cVC.delegate = self // 바텀시트와 델리게이트 연결
             self.present(bottomSheetViewController, animated: true)
-            print("편의점 카테고리 버튼 클릭")
+            print("마트 카테고리 버튼 클릭")
         }
     }
     @IBAction func eduBtn(_ sender: UIButton) { //교육 버튼
@@ -231,7 +231,7 @@ extension MapViewController{    //버튼 처리
             let bottomSheetViewController = BottomSheetViewController(isTouchPassable: false, contentViewController: cVC )
             cVC.delegate = self // 바텀시트와 델리게이트 연결
             self.present(bottomSheetViewController, animated: true)
-            print("편의점 카테고리 버튼 클릭")
+            print("교육 카테고리 버튼 클릭")
         }
 
     }
@@ -263,6 +263,18 @@ extension MapViewController{    //버튼 처리
     }
     @IBAction func goodBtn(_ sender: UIButton) {//선한영향력 버튼
     }
+    
+    @IBAction func bookMarkBtn(_ sender: UIButton) {
+        bookMarkList(){
+            let cVC: CustomBottomSheetVC = CustomBottomSheetVC()
+            let bottomSheetViewController = BottomSheetViewController(isTouchPassable: false, contentViewController: cVC )
+            cVC.delegate = self // 바텀시트와 델리게이트 연결
+            self.present(bottomSheetViewController, animated: true)
+            print("북마크 리스트 조회 버튼 클릭")
+        }
+    }
+    
+    
     
 }
 

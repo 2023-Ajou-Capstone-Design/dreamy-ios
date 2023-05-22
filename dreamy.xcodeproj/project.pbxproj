@@ -98,6 +98,10 @@
 		94E8E77A2A1444EC004B7664 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8E7792A1444EC004B7664 /* UserDefaultManager.swift */; };
 		94E8E77C2A144571004B7664 /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8E77B2A144571004B7664 /* FirebaseStorageManager.swift */; };
 		94E8E77E2A1448D7004B7664 /* DaumMap.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E8E77D2A1448D6004B7664 /* DaumMap.xcframework */; };
+		94E8E7AA2A1A265C004B7664 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8E7A92A1A265C004B7664 /* MyPageVC.swift */; };
+		94E8E7AC2A1A27F5004B7664 /* MyPageLoadDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8E7AB2A1A27F5004B7664 /* MyPageLoadDB.swift */; };
+		94E8E7AE2A1A2D10004B7664 /* MyFoodListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8E7AD2A1A2D10004B7664 /* MyFoodListVC.swift */; };
+		94E8E7B22A1A453E004B7664 /* MyPageTownRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8E7B12A1A453E004B7664 /* MyPageTownRegisterVC.swift */; };
 		EB89301681AF71EBABA0D02A /* Pods_dreamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8D638761698E0678212EC8 /* Pods_dreamy.framework */; };
 		EEFEF409746F144DAC1981A9 /* Pods_dreamy_dreamyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E9606E2AFC4D7900B6856A /* Pods_dreamy_dreamyUITests.framework */; };
 /* End PBXBuildFile section */
@@ -231,6 +235,10 @@
 		94E8E7792A1444EC004B7664 /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		94E8E77B2A144571004B7664 /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
 		94E8E77D2A1448D6004B7664 /* DaumMap.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = DaumMap.xcframework; sourceTree = "<group>"; };
+		94E8E7A92A1A265C004B7664 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
+		94E8E7AB2A1A27F5004B7664 /* MyPageLoadDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageLoadDB.swift; sourceTree = "<group>"; };
+		94E8E7AD2A1A2D10004B7664 /* MyFoodListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodListVC.swift; sourceTree = "<group>"; };
+		94E8E7B12A1A453E004B7664 /* MyPageTownRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTownRegisterVC.swift; sourceTree = "<group>"; };
 		EF639CE75FA8C0A26E63A510 /* Pods-dreamy-dreamyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamy-dreamyUITests.debug.xcconfig"; path = "Target Support Files/Pods-dreamy-dreamyUITests/Pods-dreamy-dreamyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -367,6 +375,7 @@
 		94802D8829CDD0120015AC3D /* dreamy */ = {
 			isa = PBXGroup;
 			children = (
+				94E8E7A82A1A2636004B7664 /* MyPage */,
 				94E8E7312A120420004B7664 /* Chat */,
 				946336F629EAF478002EC3DE /* FoodSharing */,
 				946336F329E97B83002EC3DE /* Login */,
@@ -560,6 +569,17 @@
 				94E8E76D2A1434D0004B7664 /* UIImage.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		94E8E7A82A1A2636004B7664 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				94E8E7A92A1A265C004B7664 /* MyPageVC.swift */,
+				94E8E7AB2A1A27F5004B7664 /* MyPageLoadDB.swift */,
+				94E8E7AD2A1A2D10004B7664 /* MyFoodListVC.swift */,
+				94E8E7B12A1A453E004B7664 /* MyPageTownRegisterVC.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		DEE4D7C81D3316DCD91B15BF /* Pods */ = {
@@ -849,6 +869,7 @@
 				94802D8E29CDD0120015AC3D /* ViewController.swift in Sources */,
 				94E8E75F2A1429FF004B7664 /* ImageMediaItem.swift in Sources */,
 				94E8E75B2A1428AB004B7664 /* Channel.swift in Sources */,
+				94E8E7AC2A1A27F5004B7664 /* MyPageLoadDB.swift in Sources */,
 				94802D9429CDD0120015AC3D /* dreamy.xcdatamodeld in Sources */,
 				94802D8A29CDD0120015AC3D /* AppDelegate.swift in Sources */,
 				94E8E7692A1434A4004B7664 /* BaseViewController.swift in Sources */,
@@ -861,6 +882,7 @@
 				949B19A82A07F9FC006CD9DA /* TownRegisterVC.swift in Sources */,
 				949B19A62A07F605006CD9DA /* CardNumberAlert.swift in Sources */,
 				949B19A22A06DBF8006CD9DA /* haveCardVC.swift in Sources */,
+				94E8E7AE2A1A2D10004B7664 /* MyFoodListVC.swift in Sources */,
 				94BF454229CEF165002D855E /* TouchBlockIntrinsicPanelLayout.swift in Sources */,
 				947C272229CF395F00FDC3F8 /* MapPin.swift in Sources */,
 				949B19A42A06DEA2006CD9DA /* UserModel.swift in Sources */,
@@ -879,6 +901,7 @@
 				94E8E7702A1434D0004B7664 /* UIImage.swift in Sources */,
 				946336F529E97BFC002EC3DE /* LoginViewController.swift in Sources */,
 				94E8E75D2A1429D6004B7664 /* Message.swift in Sources */,
+				94E8E7AA2A1A265C004B7664 /* MyPageVC.swift in Sources */,
 				94BF454429CEF41B002D855E /* BottomSheetViewController.swift in Sources */,
 				94E8E7632A142B13004B7664 /* ChatVC.swift in Sources */,
 				946336F829EAF48F002EC3DE /* FoodSharingListVC.swift in Sources */,
@@ -890,6 +913,7 @@
 				946336FE29EB0933002EC3DE /* FoodSharingListCell.swift in Sources */,
 				946336FA29EAF6FD002EC3DE /* FoodShareLoadDB.swift in Sources */,
 				94E8E7302A11FA5F004B7664 /* LoginLoadDB.swift in Sources */,
+				94E8E7B22A1A453E004B7664 /* MyPageTownRegisterVC.swift in Sources */,
 				94E8E7662A143425004B7664 /* ChannelVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,6 @@ var foodDetailS = FoodSharingCellModel(Photo1: nil, Photo2: nil, Photo3: nil, Co
 class FoodDetailVC: UIViewController, sendFoodSharingDetail {
     
     @IBOutlet var foodImage: UIImageView!
-    
     @IBOutlet var foodDetailAKA: UILabel!
     @IBOutlet var foodDetailTown: UILabel!
     @IBOutlet var foodDetailUploadTime: UILabel!
@@ -23,8 +22,7 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
 //        super.viewDidLoad()
         
 //        configure()
-        
-        // Do any additional setup after loading the view.
+
     }
     
    
@@ -68,32 +66,21 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
             print("푸드쉐어링 글 상세 Delegate 성공")
         }
         
-        //        DispatchQueue.main.async{
-        //            self.performSegue(withIdentifier: "goFoodDetail", sender: self)
-        //
-        //        }
     }
     
     func configure(foodDetail: FoodSharingCellModel) {
-//        foodDetailAKA.text = "ㅈㅈㅁ"
-//        foodDetailTown.text = "서울시 강남구"
-//        foodDetailTitle.text = "바나나"
-//        foodDetailContents.text = "바나나 가져가세요 "
-//        foodDetailUploadTime.text = "2222년 2월 22일"
+
         foodDetailAKA.text = foodDetail.UserID
-        foodDetailAKA.isHidden = false
+//        foodDetailAKA.isHidden = false
         
         foodDetailTown.text = foodDetail.Town
-        foodDetailTown.isHidden = false
+//        foodDetailTown.isHidden = false
 
         foodDetailTitle.text = foodDetail.Title
-        foodDetailTitle.isHidden = false
+//        foodDetailTitle.isHidden = false
 
         foodDetailContents.text = foodDetail.Contents
         foodDetailUploadTime.text = foodDetail.UploadTime
-        
-        
-        //
         
     }
     

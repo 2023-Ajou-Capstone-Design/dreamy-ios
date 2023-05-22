@@ -11,6 +11,9 @@ var foodList: [FoodSharingCellModel] = []
 
 class FoodSharingListVC: UIViewController {
     
+    var isFromMainPage: Bool = false
+    var isFromMyPage: Bool = false
+    
     var delegate: sendFoodSharingDetail?    // 셀 클릭시 푸드쉐어링 글 상세 delegate
     let foodDetailVC = FoodDetailVC()
 
@@ -31,7 +34,12 @@ class FoodSharingListVC: UIViewController {
             super.viewDidLoad()
             view.backgroundColor = .white
             setupView()
-            loadData()
+
+            if isFromMyPage{
+                loadData1()
+            }else if isFromMainPage{
+                loadData()
+            }
             
             self.view.sendSubviewToBack(tableView)
         }
@@ -42,15 +50,22 @@ class FoodSharingListVC: UIViewController {
             tableView.dataSource = self
         }
 
-        private func loadData() {
-//            dataSource.append(.init(leftImage: UIImage(systemName: "pencil")!, leftTitle: "연필"))
-//            dataSource.append(.init(leftImage: UIImage(systemName: "bookmark.fill")!, leftTitle: "북마크"))
+        private func loadData() {//메인페이지에서 왔을시
+
             FoodShareGetList {
                 self.tableView.reloadData()
             }
-//            tableView.reloadData()
-        }
+            isFromMainPage = false
 
+        }
+    
+    private func loadData1(){   //마이페이지에서 왔을시
+        MyList(){
+            self.tableView.reloadData()
+        }
+        isFromMyPage = false
+    }
+ 
 }
 
 extension FoodSharingListVC: UITableViewDelegate, UITableViewDataSource {
@@ -66,7 +81,6 @@ extension FoodSharingListVC: UITableViewDelegate, UITableViewDataSource {
         
         foodDetailVC?.foodGetDetail(foodDetail: foodList[indexPath.row]){
             self.navigationController?.pushViewController(foodDetailVC!, animated: true) // push
-
         }
         
 //        delegate?.sendFoodSharingDetailInfo(foodDetail: foodList[indexPath.row])    //해당 가게 cell 전달

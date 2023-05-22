@@ -1,13 +1,13 @@
 //
-//  TownRegisterVC.swift
+//  MyPageTownRegisterVC.swift
 //  dreamy
 //
-//  Created by 장준모 on 2023/05/08.
+//  Created by 장준모 on 2023/05/21.
 //
 
 import UIKit
 
-class TownRegisterVC: UIViewController {
+class MyPageTownRegisterVC: UIViewController {
     
     var dataSource: [String] = ["수원시 영통구 원천동", "수원시 영통구 매탄동", "수원시 팔달구 우만동", "수원시 팔달구 인계동", "수원시 영통구 광교동"]
     var filteredDataSource: [String] = []
@@ -66,7 +66,7 @@ class TownRegisterVC: UIViewController {
 }
 
 
-extension TownRegisterVC: UITableViewDelegate, UITableViewDataSource {
+extension MyPageTownRegisterVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return isEditMode ? filteredDataSource.count : dataSource.count
     }
@@ -88,40 +88,16 @@ extension TownRegisterVC: UITableViewDelegate, UITableViewDataSource {
         guard let pvc = self.presentingViewController else { return }//현재 vc
 
 //        self.dismiss(animated: true)
-        popNickname()
-//        NotificationCenter.default.post(name: NSNotification.Name("TownregisterNotification"), object: nil) //동네 설정 완료 알림 보내기 
+//        popNickname()
+//        NotificationCenter.default.post(name: NSNotification.Name("TownregisterNotification"), object: nil) //동네 설정 완료 알림 보내기
 
     }
 }
 
-extension TownRegisterVC: UISearchResultsUpdating {
+extension MyPageTownRegisterVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
         filteredDataSource = dataSource.filter { $0.contains(text) }
         tableView.reloadData()
     }
-}
-
-extension TownRegisterVC{
-    func popNickname() {
-        print("닉네임 입력창 오픈")
-        
-        let nicknameAlert = UIAlertController(title: "닉네임 설정", message: nil, preferredStyle: .alert) // 닉네임 설정 알림창
-        nicknameAlert.addTextField{ (nick) in
-            nick.placeholder = "닉네임을 설정해주세요"
-        }
-        
-        let okayAction = UIAlertAction(title: "등록하기", style: .default) { action in  //등록하기 버튼 클릭시 액션
-            if let nickTextField = nicknameAlert.textFields?.first{
-                userInfo.set(nickTextField.text, forKey: "User_AKA")
-                self.dismiss(animated: false)
-                NotificationCenter.default.post(name: NSNotification.Name("TownregisterNotification"), object: nil) //동네 설정 완료 알림 보내기
-
-            }
-        }   //end of registerAction
-        
-        nicknameAlert.addAction(okayAction)
-        present(nicknameAlert, animated: false, completion: nil)
-    }//end of popNickname
-    
 }

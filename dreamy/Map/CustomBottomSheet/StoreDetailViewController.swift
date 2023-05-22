@@ -48,7 +48,12 @@ class StoreDetailViewController: UIViewController {
         }
     }
     
-
+    @IBAction func bookMarkBtn(_ sender: UIButton) {    //북마크 추가 버튼
+        bookMarkAdd {
+            <#code#>
+        }
+    }
+    
 }
 
 extension StoreDetailViewController{
