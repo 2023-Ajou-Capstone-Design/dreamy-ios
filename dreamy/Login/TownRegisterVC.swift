@@ -9,7 +9,12 @@ import UIKit
 
 class TownRegisterVC: UIViewController {
     
-    var dataSource: [String] = ["수원시 영통구 원천동", "수원시 영통구 매탄동", "수원시 팔달구 우만동", "수원시 팔달구 인계동", "수원시 영통구 광교동"]
+    var dataSource: [String] = [
+        "수원시 권선구 세류동", "수원시 권선구 평동", "수원시 권선구 서둔동", "수원시 권선구 구운동", "수원시 권선구 금곡동", "수원시 권선구 호매실동", "수원시 권선구 권선동", "수원시 권선구 곡선동", "수원시 권선구 입북동",
+        "수원시 영통구 매탄동", "수원시 영통구 영통동", "수원시 영통구 원천동", "수원시 영통구 망포동", "수원시 영통구 광교동",
+        "수원시 팔달구 행궁동", "수원시 팔달구 매교동", "수원시 팔달구 매산동", "수원시 팔달구 고등동", "수원시 팔달구 화서동", "수원시 팔달구 지동", "수원시 팔달구 우만동", "수원시 팔달구 인계동",
+        "수원시 장안구 파장동", "수원시 장안구 율천동", "수원시 장안구 정자동", "수원시 장안구 영화동", "수원시 장안구 송죽동", "수원시 장안구 조원동", "수원시 장안구 연무동"
+    ]
     var filteredDataSource: [String] = []
     
     var isEditMode: Bool {
@@ -85,11 +90,11 @@ extension TownRegisterVC: UITableViewDelegate, UITableViewDataSource {
         userInfo.set(dataSource[indexPath.row], forKey: "User_Town")    // userdefault에 동네 추가
         print(isEditing ? filteredDataSource[indexPath.row] : dataSource[indexPath.row])
         
-        guard let pvc = self.presentingViewController else { return }//현재 vc
+//        guard let pvc = self.presentingViewController else { return }//현재 vc
 
 //        self.dismiss(animated: true)
         popNickname()
-//        NotificationCenter.default.post(name: NSNotification.Name("TownregisterNotification"), object: nil) //동네 설정 완료 알림 보내기 
+//        NotificationCenter.default.post(name: NSNotification.Name("TownregisterNotification"), object: nil) //동네 설정 완료 알림 보내기
 
     }
 }

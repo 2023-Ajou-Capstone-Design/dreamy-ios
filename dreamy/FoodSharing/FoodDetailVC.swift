@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
-var foodDetailS = FoodSharingCellModel(Photo1: nil, Photo2: nil, Photo3: nil, Contents: "contents", Title: "title", Town: nil, UploadTime: "uploadTime", UserID: "userID", WritingID: "writingID")
+
+var foodDetailS = FoodSharingCellModel(Photo1: nil, Photo2: nil, Photo3: nil, Contents: "contents", Title: "title", Town: nil, UploadTime: "uploadTime", UserID: "userID", WritingID: "writingID", AKA: nil)
+
+var newChannel = Channel(name: "")
 
 class FoodDetailVC: UIViewController, sendFoodSharingDetail {
     
@@ -18,14 +23,41 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
     @IBOutlet var foodDetailTitle: UILabel!
     @IBOutlet var foodDetailContents: UILabel!
     
+    private let overlayView = UIView()
+    private let loadingIndicator = UIActivityIndicatorView(style: .large)
+
+    private let channelStream = ChannelFirestoreStream()
+    var currentUser: User = Auth.auth().currentUser!
+    
+
     override func viewDidLoad() {
-//        super.viewDidLoad()
+        super.viewDidLoad()
         
 //        configure()
 
     }
+    @IBAction func chatBtn(_ sender: UIButton) {//채팅하기 버튼
+        channelStream.createChannel(with: foodDetailTitle.text!)//채널을 만들고
+        newChannel = Channel(name: foodDetailTitle.text ?? "")
+
+        let chatVC = ChatVC(user: Auth.auth().currentUser!, channel: channels.first!)
+//        navigationController?.pushViewController(chatVC, animated: true)
+//        self.navigationController?.pushViewController(chatVC, animated: true)
+        
+        let navigationController = UINavigationController(rootViewController: chatVC)
+//        navigationController.modalPresentationStyle = .fullScreen // Set the desired presentation style
+
+        present(navigationController, animated: true, completion: nil)
+        
+
+    }
     
-   
+    @objc func editButtonTapped() {
+           // Perform actions when the button is tapped
+           // E.g., present a view controller for editing or delete items
+           // Or toggle the editing mode of a UITableView
+           print("Edit button tapped")
+       }
     
     func sendFoodSharingDetailInfo(foodDetail: FoodSharingCellModel) {  //푸드쉐어링 상세페이지 DB로 불러와 채우기
         
@@ -34,7 +66,7 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
             //            if let foodImage = foodList[0].Photo1{
             //
             //            }
-            if let aka = foodList.first?.UserID{
+            if let aka = foodList.first?.AKA{
                 self.foodDetailAKA.text = aka
             }else{
                 
@@ -70,7 +102,7 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
     
     func configure(foodDetail: FoodSharingCellModel) {
 
-        foodDetailAKA.text = foodDetail.UserID
+        foodDetailAKA.text = foodDetail.AKA
 //        foodDetailAKA.isHidden = false
         
         foodDetailTown.text = foodDetail.Town
@@ -96,4 +128,5 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
         completion()
 
     }   //end of foodGetDetail
+    
 }

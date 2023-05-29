@@ -18,7 +18,7 @@ class StoreDetailViewController: UIViewController {
     @IBOutlet var storePhoneNumber: UILabel!
     @IBOutlet var storeProvided1: UILabel!
     @IBOutlet var storeProvided2: UILabel!
-    
+    @IBOutlet var storeType: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +50,29 @@ class StoreDetailViewController: UIViewController {
     
     @IBAction func bookMarkBtn(_ sender: UIButton) {    //북마크 추가 버튼
         bookMarkAdd {
-            <#code#>
+            print("북마크 추가 완료")
+            self.showToast("북마크 추가 완료", withDuration: 2.0, delay: 1.5)
         }
+    }
+    
+    func showToast(_ message : String, withDuration: Double, delay: Double) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = UIFont.systemFont(ofSize: 14.0)
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 16
+        toastLabel.clipsToBounds  =  true
+            
+        self.view.addSubview(toastLabel)
+            
+        UIView.animate(withDuration: withDuration, delay: delay, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
     
 }
@@ -61,22 +82,28 @@ extension StoreDetailViewController{
    public func configure(item: StoreDB){
         
        if let storeName = self.storeName {
-               storeName.text = item.StoreName
-           }
-           if let storeCategory = self.storeCategory {
-               storeCategory.text = item.CateName
-           }
-           if let storeAddress = self.storeAddress {
-               storeAddress.text = item.Address
-           }
-           if let storePhoneNumber = self.storePhoneNumber {
-               storePhoneNumber.text = item.Phone
-           }
-           if let storeProvided1 = self.storeProvided1 {
-               storeProvided1.text = item.Provided1
-           }
-           if let storeProvided2 = self.storeProvided2 {
-               storeProvided2.text = item.Provided2
-           }
-    }
+           storeName.text = item.StoreName
+       }
+       if let storeCategory = self.storeCategory {
+           storeCategory.text = item.CateName
+       }
+       if let storeAddress = self.storeAddress {
+           storeAddress.text = item.Address
+       }
+       if let storePhoneNumber = self.storePhoneNumber {
+           storePhoneNumber.text = item.Phone
+       }
+       if let storeProvided1 = self.storeProvided1 {
+           storeProvided1.text = item.Provided1
+       }
+       if let storeProvided2 = self.storeProvided2 {
+           storeProvided2.text = item.Provided2
+       }
+       if let storeType = self.storeType {
+           storeType.text = item.StoreType == "2" ? "선항영향력가게" : "급식카드 가맹점"
+       }
+       
+   }
 }
+
+

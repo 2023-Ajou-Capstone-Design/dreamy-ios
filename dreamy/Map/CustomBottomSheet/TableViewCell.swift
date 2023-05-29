@@ -79,7 +79,7 @@ extension TableViewCell {   //cell에 들어갈 내용 처리 configure 함수
         case "99":
             self.categoryName.text = "기타"
         default:
-            self.categoryName.text = "알 수 없음"
+            self.categoryName.text = categoryname
         }
 //        self.categoryName.text = categoryname
     }

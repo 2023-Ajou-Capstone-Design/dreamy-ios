@@ -175,7 +175,7 @@ func FoodShareDetail(userID: String, writingID: String,completion: @escaping () 
     
 }//end FoodShareDetail
 
-func FoodShareAdd(title: String, contents: String, photo1: String?, photo2: String?, photo3: String? ) { // 푸드쉐어링 리스트 업로드
+func FoodShareAdd(title: String, contents: String, photo1: String?, photo2: String?, photo3: String? , completion: @escaping () -> Void) { // 푸드쉐어링 리스트 업로드
        
        // [http 요청 주소 지정]
        let url = "http://3.130.31.88:5000/FoodShare/add?"
@@ -189,7 +189,7 @@ func FoodShareAdd(title: String, contents: String, photo1: String?, photo2: Stri
        let queryString : Parameters = [
         "UserID" : userInfo.string(forKey: "User_Email") ?? "실패",
         "Title" : title,
-        "contents" : contents,
+        "Contents" : contents,
         "Town" : userInfo.string(forKey: "User_Town") ?? "실패",
         "Photo1" : photo1 ?? "",
         "Photo2" : photo2 ?? "",
@@ -221,7 +221,7 @@ func FoodShareAdd(title: String, contents: String, photo1: String?, photo2: Stri
                    print("-------------------------------")
                    
                    print("글 등록 성공")
-//                   completion()
+                   completion()
                    // [비동기 작업 수행]
                    DispatchQueue.main.async {
 //                       items.append(contentsOf: Model.items)

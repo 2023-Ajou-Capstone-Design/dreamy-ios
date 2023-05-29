@@ -54,7 +54,7 @@ final class CustomBottomSheetVC: UIViewController, ScrollableViewController {
 
 extension CustomBottomSheetVC: UITableViewDataSource { //테이블뷰 DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {   //테이블 행의 갯수 반환
-        20  //일단 20개만
+        items.count  //일단 20개만
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {    //각 행에 대한 cell 객체 제공
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as? TableViewCell ?? TableViewCell() // 적절한 타입의 셀로 바꿈
@@ -63,7 +63,7 @@ extension CustomBottomSheetVC: UITableViewDataSource { //테이블뷰 DataSource
 //        cell.configure(image: "home", storename: storeNameAndCategory., categoryname: <#T##String#>)
 //        cell.configure(storename: datasource[indexPath.row + 2][6], categoryname: datasource[indexPath.row + 2][2])
         
-        cell.configure(storename: items[indexPath.row].StoreName, categoryname: items[indexPath.row].Category!) // 가게 이름, 카테고리, (운영시간) 띄우기
+        cell.configure(storename: items[indexPath.row].StoreName, categoryname: items[indexPath.row].CateName!) // 가게 이름, 카테고리, (운영시간) 띄우기
         
         return cell
     }

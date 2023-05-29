@@ -10,6 +10,8 @@ import SnapKit
 import FirebaseAuth
 import Firebase
 
+var channels = [Channel]()
+
 class ChannelVC: BaseViewController {
 
     lazy var channelTableView: UITableView = {
@@ -21,7 +23,7 @@ class ChannelVC: BaseViewController {
         return view
     }()
     
-    var channels = [Channel]()
+//    var channels = [Channel]()
     private let currentUser: User
     private let channelStream = ChannelFirestoreStream()
     private var currentChannelAlertController: UIAlertController?
@@ -30,7 +32,7 @@ class ChannelVC: BaseViewController {
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
         
-        title = "Channels"
+        title = "채팅"    //타이틀
     }
     
     required init?(coder: NSCoder) {
@@ -63,7 +65,7 @@ class ChannelVC: BaseViewController {
           UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
           UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddItem))
         ]
-        navigationController?.isToolbarHidden = false
+        navigationController?.isToolbarHidden = false   // 나중에 true로
     }
     
     private func setupListener() {
@@ -153,10 +155,10 @@ extension ChannelVC: UITableViewDataSource, UITableViewDelegate {
         return 55
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //채널 하나 클릭했을 시
         let channel = channels[indexPath.row]
         let viewController = ChatVC(user: currentUser, channel: channel)
-//        self.present(ChatVC(user: currentUser, channel: channel), animated: true)
+
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

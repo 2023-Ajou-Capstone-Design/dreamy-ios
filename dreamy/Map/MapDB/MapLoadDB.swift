@@ -498,7 +498,7 @@ func bookMarkList(completion: @escaping () -> Void ) {  // 북마크 리스트 �
        
        // [http 요청 파라미터 지정 실시]
        let queryString : Parameters = [
-        "UserID" : userInfo.string(forKey: "User_Email")
+        "UserID" : userInfo.string(forKey: "User_Email")!
        ]
        
        // [http 요청 수행 실시]

@@ -64,13 +64,18 @@ class FoodRegisterVC: UIViewController, UIImagePickerControllerDelegate, UINavig
 //                print("이미지를 인코딩할 수 없습니다.")
 //                FoodShareAdd(title: title, contents: content, photo1: nil, photo2: nil, photo3: nil)
 //            }
-            FoodShareAdd(title: title, contents: content, photo1: nil, photo2: nil, photo3: nil)
-
+            FoodShareAdd(title: title, contents: content, photo1: nil, photo2: nil, photo3: nil){
+                DispatchQueue.main.async { [weak self] in
+                    self?.navigationController?.popViewController(animated: true)
+                }
+            }
         }
+        
+        }//end 등록 버튼
 
-        self.dismiss(animated: true)
-    }//end 등록 버튼
+        
 }
+
 
 // UIImage를 Base64 문자열로 인코딩하는 함수
 func encodeImageToBase64(image: UIImage) -> String? {

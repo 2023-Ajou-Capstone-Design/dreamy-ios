@@ -9,6 +9,7 @@ import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
 import KakaoSDKCommon
+import FirebaseAuth
 
 var myUser: userModel?  = nil  // DB로 보내줄 User정보
 var firstLoginFlag : Bool = false   //최초 로그인 여부
@@ -68,18 +69,6 @@ class LoginViewController: UIViewController {   //로그인 뷰 컨트롤러
 // MARK: - Extensions
 extension LoginViewController {
     
-    //        private func setUI() {
-    //
-    //            // ✅ 카카오 로그인 이미지 설정
-    //            loginWithKakaoImageView.contentMode = .scaleAspectFit
-    //            loginWithKakaoImageView.image = UIImage(named: "kakao_login_large_wide")
-    //
-    //            loginWithKakaoaccountImageView.contentMode = .scaleAspectFit
-    //            loginWithKakaoaccountImageView.image = UIImage(named: "kakao_login_large_wide")
-    //
-    //            self.navigationController?.navigationBar.isHidden = true
-    //        }
-    
     // ✅ 이미지뷰에 제스쳐 추가
     private func setGestureRecognizer() {
         let loginKakao = UITapGestureRecognizer(target: self, action: #selector(loginKakao))
@@ -101,11 +90,12 @@ extension LoginViewController {
                 print("getUserInfo 함수 실행")
                 
 //                 ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
-//                                    let nickname = user?.kakaoAccount?.profile?.nickname
-                                    let email = user?.kakaoAccount?.email
-                //
-                //                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LogoutViewController") as? LogoutViewController else { return }
-                //
+                
+                UserDefaultManager.displayName = "mo"   //파이어베이스 인증
+                Auth.auth().signInAnonymously()
+                
+                let email = user?.kakaoAccount?.email
+                
                 // ✅ 사용자 정보 넘기기
                 userInfo.set(email, forKey: "User_Email")   //카카오로 받은 Email을 userInfo에 추가
                 

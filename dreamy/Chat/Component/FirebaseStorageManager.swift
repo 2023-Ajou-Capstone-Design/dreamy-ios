@@ -2,8 +2,7 @@
 //  FirebaseStorageManager.swift
 //  ExChat
 //
-//  Created by 김종권 on 2021/11/16.
-//
+//  Created by 장준모 on 2023/05/17.//
 
 import Foundation
 import FirebaseStorage

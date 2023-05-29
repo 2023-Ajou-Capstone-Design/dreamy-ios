@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//import FirebaseAuth
 
 var foodList: [FoodSharingCellModel] = []
 
@@ -15,6 +16,7 @@ class FoodSharingListVC: UIViewController {
     var isFromMyPage: Bool = false
     
     var delegate: sendFoodSharingDetail?    // 셀 클릭시 푸드쉐어링 글 상세 delegate
+//    let foodDetailVC = FoodDetailVC(currentUser: Auth.auth().currentUser!)
     let foodDetailVC = FoodDetailVC()
 
 
@@ -82,14 +84,6 @@ extension FoodSharingListVC: UITableViewDelegate, UITableViewDataSource {
         foodDetailVC?.foodGetDetail(foodDetail: foodList[indexPath.row]){
             self.navigationController?.pushViewController(foodDetailVC!, animated: true) // push
         }
-        
-//        delegate?.sendFoodSharingDetailInfo(foodDetail: foodList[indexPath.row])    //해당 가게 cell 전달
-        
-//        DispatchQueue.main.async{
-//            self.show(foodDetailVC!, sender: self)
-//        }
-
-//        self.show(foodDetailVC!, sender: self)
         
     }
 

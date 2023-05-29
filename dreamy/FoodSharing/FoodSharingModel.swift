@@ -17,6 +17,7 @@ struct FoodSharingCellModel: Codable{   //푸드셰어링 리스트 셀에 들�
     let UploadTime: String
     let UserID: String
     let WritingID: String
+    let AKA: String?
     
     enum CodingKeys: String, CodingKey {
         case Photo1 = "Photo1"
@@ -28,6 +29,7 @@ struct FoodSharingCellModel: Codable{   //푸드셰어링 리스트 셀에 들�
         case UploadTime = "UploadTime"
         case UserID = "UserID"
         case WritingID = "WritingID"
+        case AKA = "AKA"
     }
 }
 

@@ -8,8 +8,6 @@
 import Foundation
 import FirebaseFirestore
 
-
-
 struct Channel {
     var id: String?
     let name: String

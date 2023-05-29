@@ -57,7 +57,7 @@ class MyPageVC: UIViewController {
     @IBAction func mySharingBtn(_ sender: UIButton) {// 내가 쓴글 확인하기 버튼
         
     }
-    @IBAction func changeTown(_ sender: UIButton) {//탈퇴하기 버튼
+    @IBAction func townChangeBtn(_ sender: UIButton) {//탈퇴하기 버튼
         
     }
     @IBAction func logoutBtn(_ sender: UIButton) {//로그아웃 버튼
