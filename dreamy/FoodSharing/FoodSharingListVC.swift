@@ -44,6 +44,10 @@ class FoodSharingListVC: UIViewController {
             }
             
             self.view.sendSubviewToBack(tableView)
+            
+            //알림이 오면 리로드
+            NotificationCenter.default.addObserver(self, selector: #selector(receiveNotification(_:)), name: .loadDataNotification, object: nil)
+
         }
 
         private func setupView() {
@@ -68,6 +72,15 @@ class FoodSharingListVC: UIViewController {
         isFromMyPage = false
     }
  
+    
+    @objc func receiveNotification(_ notification: Notification) {
+        // Call the loadData() function here
+        FoodShareGetList {
+            self.tableView.reloadData()
+            print("등록 후 테이블 리로드")
+        }
+    }
+    
 }
 
 extension FoodSharingListVC: UITableViewDelegate, UITableViewDataSource {

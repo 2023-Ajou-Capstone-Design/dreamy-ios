@@ -79,6 +79,7 @@
 		94BF454629CEF4AB002D855E /* SelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BF454529CEF4AB002D855E /* SelfSizingTableView.swift */; };
 		94BF454829CF1BE5002D855E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BF454729CF1BE5002D855E /* OpenGLES.framework */; };
 		94BF454D29CF1DAF002D855E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BF454C29CF1D68002D855E /* libxml2.tbd */; };
+		94D7CF0B2A26079000E1276B /* FoodShareModifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7CF0A2A26079000E1276B /* FoodShareModifyVC.swift */; };
 		94E8E7302A11FA5F004B7664 /* LoginLoadDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8E72F2A11FA5F004B7664 /* LoginLoadDB.swift */; };
 		94E8E7552A1362E4004B7664 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94E8E7542A1362E4004B7664 /* GoogleService-Info.plist */; };
 		94E8E75B2A1428AB004B7664 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8E75A2A1428AB004B7664 /* Channel.swift */; };
@@ -215,6 +216,7 @@
 		94BF454729CF1BE5002D855E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		94BF454A29CF1D54002D855E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		94BF454C29CF1D68002D855E /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		94D7CF0A2A26079000E1276B /* FoodShareModifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodShareModifyVC.swift; sourceTree = "<group>"; };
 		94E8E72F2A11FA5F004B7664 /* LoginLoadDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLoadDB.swift; sourceTree = "<group>"; };
 		94E8E7502A135FD1004B7664 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94E8E7542A1362E4004B7664 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				946336FD29EB0933002EC3DE /* FoodSharingListCell.swift */,
 				949B19A92A080020006CD9DA /* FoodDetailVC.swift */,
 				949B19AB2A0803B1006CD9DA /* FoodRegisterVC.swift */,
+				94D7CF0A2A26079000E1276B /* FoodShareModifyVC.swift */,
 			);
 			path = FoodSharing;
 			sourceTree = "<group>";
@@ -872,6 +875,7 @@
 				94E8E7AC2A1A27F5004B7664 /* MyPageLoadDB.swift in Sources */,
 				94802D9429CDD0120015AC3D /* dreamy.xcdatamodeld in Sources */,
 				94802D8A29CDD0120015AC3D /* AppDelegate.swift in Sources */,
+				94D7CF0B2A26079000E1276B /* FoodShareModifyVC.swift in Sources */,
 				94E8E7692A1434A4004B7664 /* BaseViewController.swift in Sources */,
 				9480304829CE073B0015AC3D /* MapViewController.swift in Sources */,
 				94E8E7752A1436CF004B7664 /* ChatFirestoreStream.swift in Sources */,

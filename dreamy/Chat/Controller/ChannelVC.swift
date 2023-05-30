@@ -10,7 +10,7 @@ import SnapKit
 import FirebaseAuth
 import Firebase
 
-var channels = [Channel]()
+//var channels = [Channel]()
 
 class ChannelVC: BaseViewController {
 
@@ -23,9 +23,9 @@ class ChannelVC: BaseViewController {
         return view
     }()
     
-//    var channels = [Channel]()
+    var channels = [Channel]()
     private let currentUser: User
-    private let channelStream = ChannelFirestoreStream()
+    let channelStream = ChannelFirestoreStream()
     private var currentChannelAlertController: UIAlertController?
     
     init(currentUser: User) {
@@ -65,10 +65,10 @@ class ChannelVC: BaseViewController {
           UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
           UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddItem))
         ]
-        navigationController?.isToolbarHidden = false   // 나중에 true로
+        navigationController?.isToolbarHidden = true   // 나중에 true로
     }
     
-    private func setupListener() {
+     func setupListener() {
         channelStream.subscribe { [weak self] result in
             switch result {
             case .success(let data):
@@ -159,6 +159,8 @@ extension ChannelVC: UITableViewDataSource, UITableViewDelegate {
         let channel = channels[indexPath.row]
         let viewController = ChatVC(user: currentUser, channel: channel)
 
+        print(channel)
+        
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

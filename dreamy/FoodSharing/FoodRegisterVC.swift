@@ -57,14 +57,11 @@ class FoodRegisterVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let title = foodTitle.text, let content = foodContent.text {
             
-//            if let base64String = encodeImageToBase64(image: capturedImage) {
-////                print("Base64 문자열: \(base64String)")
-//                FoodShareAdd(title: title, contents: content, photo1: base64String, photo2: nil, photo3: nil)
-//            } else {
-//                print("이미지를 인코딩할 수 없습니다.")
-//                FoodShareAdd(title: title, contents: content, photo1: nil, photo2: nil, photo3: nil)
-//            }
+
             FoodShareAdd(title: title, contents: content, photo1: nil, photo2: nil, photo3: nil){
+                
+                NotificationCenter.default.post(name: .loadDataNotification, object: nil)
+                
                 DispatchQueue.main.async { [weak self] in
                     self?.navigationController?.popViewController(animated: true)
                 }
@@ -73,7 +70,11 @@ class FoodRegisterVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         }//end 등록 버튼
 
-        
+}
+
+
+extension Notification.Name {//로드 하라는 알림
+    static let loadDataNotification = Notification.Name("LoadDataNotification")
 }
 
 

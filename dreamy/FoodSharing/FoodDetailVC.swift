@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
-
+import FirebaseFirestore
 
 var foodDetailS = FoodSharingCellModel(Photo1: nil, Photo2: nil, Photo3: nil, Contents: "contents", Title: "title", Town: nil, UploadTime: "uploadTime", UserID: "userID", WritingID: "writingID", AKA: nil)
 
@@ -23,6 +23,10 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
     @IBOutlet var foodDetailTitle: UILabel!
     @IBOutlet var foodDetailContents: UILabel!
     
+    @IBOutlet var chatBtn: UIButton!
+    @IBOutlet var editBtn: UIButton!
+    @IBOutlet var removeBtn: UIButton!
+    
     private let overlayView = UIView()
     private let loadingIndicator = UIActivityIndicatorView(style: .large)
 
@@ -35,29 +39,59 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
         
 //        configure()
 
-    }
-    @IBAction func chatBtn(_ sender: UIButton) {//채팅하기 버튼
-        channelStream.createChannel(with: foodDetailTitle.text!)//채널을 만들고
-        newChannel = Channel(name: foodDetailTitle.text ?? "")
-
-        let chatVC = ChatVC(user: Auth.auth().currentUser!, channel: channels.first!)
-//        navigationController?.pushViewController(chatVC, animated: true)
-//        self.navigationController?.pushViewController(chatVC, animated: true)
+        //알림이 오면 리로드
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveNotification(_:)), name: .loadDataNotification, object: nil)
         
-        let navigationController = UINavigationController(rootViewController: chatVC)
-//        navigationController.modalPresentationStyle = .fullScreen // Set the desired presentation style
-
-        present(navigationController, animated: true, completion: nil)
-        
-
     }
     
-    @objc func editButtonTapped() {
-           // Perform actions when the button is tapped
-           // E.g., present a view controller for editing or delete items
-           // Or toggle the editing mode of a UITableView
-           print("Edit button tapped")
-       }
+    @objc func receiveNotification(_ notification: Notification) {//알림시 리로드
+        // Call the loadData() function here
+        FoodShareDetail(userID: foodDetailS.UserID, writingID: foodDetailS.WritingID ){
+            self.configure(foodDetail: foodDetailS)
+            print("푸드 상세 리로드")
+        }
+    }
+    
+    @IBAction func chatBtn(_ sender: UIButton) {//채팅하기 버튼
+        
+        let channelVC = ChannelVC(currentUser: Auth.auth().currentUser!)
+        channelVC.setupListener()
+        channelVC.channelStream.createChannel(with: foodDetailTitle.text!)
+
+        newChannel = Channel(id: foodList.first?.UserID, name: foodDetailTitle.text!)
+//        newChannel = Channel(id: document.documentID, name: foodDetailTitle.text!)
+        
+        channelVC.channels.append(newChannel)
+
+        let chatVC = ChatVC(user: Auth.auth().currentUser!, channel: channelVC.channels.first!)
+        print(channelVC.channels.first!)
+        navigationController?.pushViewController(chatVC, animated: true)
+
+    }//end of chatBtn
+    
+    @IBAction func editBtn(_ sender: UIButton) {//수정하기 버튼
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "foodShareModifyVC") as? FoodShareModifyVC /* down casting */ else { return }
+        viewController.foodtitle = foodDetailTitle.text
+        viewController.foodcontents = foodDetailContents.text   // 여기서 이렇게 넣어줍니다.
+             self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func removeBtn(_ sender: UIButton) {//삭제하기 버튼
+        
+        let sheet = UIAlertController(title: nil, message: "등록하신 글을 삭제하시겠습니까?", preferredStyle: .alert)
+        sheet.addAction(UIAlertAction(title: "삭제하기", style: .destructive, handler: { [self] _ in FoodShareDel(writingID: foodDetailUploadTime.text!){
+            
+            NotificationCenter.default.post(name: .loadDataNotification, object: nil)
+            self.navigationController?.popViewController(animated: true)
+            
+        } }))
+        sheet.addAction(UIAlertAction(title: "아니요", style: .cancel, handler: { _ in print("no 클릭") }))
+
+        present(sheet, animated: true)
+//        FoodShareDel(writingID: foodDetailUploadTime.text!)
+    }
+    
+    
     
     func sendFoodSharingDetailInfo(foodDetail: FoodSharingCellModel) {  //푸드쉐어링 상세페이지 DB로 불러와 채우기
         
@@ -114,7 +148,20 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
         foodDetailContents.text = foodDetail.Contents
         foodDetailUploadTime.text = foodDetail.UploadTime
         
+        if foodDetail.UserID == userInfo.string(forKey: "User_Email"){
+            editBtn.isHidden = false
+            removeBtn.isHidden = false
+            chatBtn.isHidden = true
+        }
+        else{
+            editBtn.isHidden = true
+            removeBtn.isHidden = true
+            chatBtn.isHidden = false
+        }
+        
     }
+    
+    
     
     func foodGetDetail(foodDetail: FoodSharingCellModel, completion: @escaping () -> Void) {
         
