@@ -40,11 +40,11 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
 //        configure()
 
         //알림이 오면 리로드
-        NotificationCenter.default.addObserver(self, selector: #selector(receiveNotification(_:)), name: .loadDataNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveNotification1(_:)), name: .loadDataNotification, object: nil)
         
     }
     
-    @objc func receiveNotification(_ notification: Notification) {//알림시 리로드
+    @objc func receiveNotification1(_ notification: Notification) {//알림시 리로드
         // Call the loadData() function here
         FoodShareDetail(userID: foodDetailS.UserID, writingID: foodDetailS.WritingID ){
             self.configure(foodDetail: foodDetailS)
@@ -72,7 +72,7 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
     @IBAction func editBtn(_ sender: UIButton) {//수정하기 버튼
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "foodShareModifyVC") as? FoodShareModifyVC /* down casting */ else { return }
         viewController.foodtitle = foodDetailTitle.text
-        viewController.foodcontents = foodDetailContents.text   // 여기서 이렇게 넣어줍니다.
+        viewController.foodcontents = foodDetailContents.text
              self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -81,8 +81,8 @@ class FoodDetailVC: UIViewController, sendFoodSharingDetail {
         let sheet = UIAlertController(title: nil, message: "등록하신 글을 삭제하시겠습니까?", preferredStyle: .alert)
         sheet.addAction(UIAlertAction(title: "삭제하기", style: .destructive, handler: { [self] _ in FoodShareDel(writingID: foodDetailUploadTime.text!){
             
-            NotificationCenter.default.post(name: .loadDataNotification, object: nil)
             self.navigationController?.popViewController(animated: true)
+//            NotificationCenter.default.post(name: .loadDataNotification, object: nil)
             
         } }))
         sheet.addAction(UIAlertAction(title: "아니요", style: .cancel, handler: { _ in print("no 클릭") }))

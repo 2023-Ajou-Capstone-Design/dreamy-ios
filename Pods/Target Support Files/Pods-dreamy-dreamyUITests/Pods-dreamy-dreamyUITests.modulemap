@@ -1,0 +1,6 @@
+framework module Pods_dreamy_dreamyUITests {
+  umbrella header "Pods-dreamy-dreamyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
